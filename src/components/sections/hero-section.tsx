@@ -32,9 +32,9 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-center">
           
           {/* ========================================================================= */}
-          {/* LEFT COLUMN: HERO HEADLINE & CTAs (Server Component)                      */}
+          {/* LEFT COLUMN: HERO HEADLINE & CTAs (Server Component) (50%)               */}
           {/* ========================================================================= */}
-          <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-start text-left">
+          <div className="lg:col-span-6 flex flex-col items-start text-left">
             {/* Top Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/95 px-3.5 py-1 text-xs font-bold text-blue-600 shadow-xs backdrop-blur-xs mb-5">
               <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
@@ -42,7 +42,7 @@ export function HeroSection() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-[44px] lg:text-[46px] xl:text-[50px] font-extrabold tracking-tight text-slate-900 leading-[1.14]">
+            <h1 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[44px] xl:text-[48px] font-extrabold tracking-tight text-slate-900 leading-[1.15]">
               AI Agent &amp; Omnichannel CRM: Dari Chat Pertama Jadi Pelanggan Seumur Hidup
             </h1>
 
@@ -77,9 +77,9 @@ export function HeroSection() {
           </div>
 
           {/* ========================================================================= */}
-          {/* RIGHT COLUMN: INTIORA CHAT DEMO (Client Component)                       */}
+          {/* RIGHT COLUMN: INTIORA CHAT DEMO WIREFRAME (50%)                          */}
           {/* ========================================================================= */}
-          <div className="lg:col-span-7 xl:col-span-7 flex items-center justify-center w-full">
+          <div className="lg:col-span-6 flex items-center justify-center w-full">
             <IntioraChatDemo />
           </div>
 

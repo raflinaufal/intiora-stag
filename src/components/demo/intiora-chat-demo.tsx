@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import { ArrowUp, Sparkles } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import {
   ChatMessageItem,
   DemoTabMode,
@@ -30,8 +30,8 @@ function ChatConversationArea({ activeTab }: ChatConversationAreaProps) {
     const el = conversationRef.current;
     if (!el) return;
     const distanceToBottom = el.scrollHeight - el.scrollTop - el.clientHeight;
-    // Considered "near bottom" if within 75px
-    isNearBottomRef.current = distanceToBottom <= 75;
+    // Considered "near bottom" if within 60px
+    isNearBottomRef.current = distanceToBottom <= 60;
   }, []);
 
   // Smooth scroll to bottom if user is near bottom
@@ -98,15 +98,15 @@ function ChatConversationArea({ activeTab }: ChatConversationAreaProps) {
     <div
       ref={conversationRef}
       onScroll={handleScroll}
-      className="flex-1 overflow-y-auto scroll-smooth chat-scrollbar bg-[#f8fafc] p-4 sm:p-5 space-y-3 sm:space-y-3.5"
+      className="flex-1 overflow-y-auto scroll-smooth chat-scrollbar bg-[#f8fafc] p-3 sm:p-3.5 space-y-2 sm:space-y-2.5"
       tabIndex={0}
       role="region"
       aria-label="Area riwayat percakapan demo interaktif"
     >
       {/* Date / Security Badge */}
-      <div className="flex justify-center mb-2">
-        <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-600 bg-slate-200/50 px-3 py-0.5 rounded-full border border-slate-300/30">
-          Enkripsi WhatsApp Business API Aktif
+      <div className="flex justify-center mb-1">
+        <span className="text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold text-slate-500 bg-slate-200/60 px-2.5 py-0.5 rounded-full border border-slate-300/40">
+          WhatsApp Business API Aktif
         </span>
       </div>
 
@@ -127,100 +127,126 @@ export function IntioraChatDemo({ className = "" }: IntioraChatDemoProps) {
   };
 
   return (
-    <div
-      className={`w-full max-w-[760px] h-[520px] sm:h-[580px] lg:h-[600px] rounded-[28px] sm:rounded-[32px] bg-white shadow-2xl shadow-blue-950/12 border border-slate-200/90 overflow-hidden flex flex-col text-slate-900 select-none ${className}`}
-    >
+    <div className={`w-full flex flex-col items-center select-none ${className}`}>
       {/* =================================================================== */}
-      {/* 1. HEADER (Fixed inside component, shrink-0)                        */}
+      {/* RESPONSIVE DEVICE WIREFRAME                                         */}
+      {/* Desktop/Tablet: Laptop frame                                        */}
+      {/* Mobile: Smartphone/iPhone frame                                     */}
       {/* =================================================================== */}
-      <div className="shrink-0 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 text-white px-4 sm:px-5 py-3 sm:py-3.5 flex flex-wrap items-center justify-between gap-2.5 sm:gap-4 shadow-sm z-10">
-        {/* Left: Brand & Status */}
-        <div className="flex items-center gap-2.5">
-          <div className="relative flex items-center justify-center h-8 w-8 rounded-xl bg-white/15 backdrop-blur-xs border border-white/25 shadow-inner">
-            <Image
-              src="/intiora-icon.png"
-              alt="Intiora Logo"
-              width={22}
-              height={22}
-              className="object-contain"
-            />
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-sm font-bold tracking-tight text-white">
-                Intiora AI
-              </span>
-              <Sparkles className="h-3.5 w-3.5 text-blue-200" />
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
-              </span>
-              <span className="text-[10px] font-medium text-blue-100/90">
-                Online &bull; Siap Merespons 24/7
-              </span>
-            </div>
+      <div className="w-full max-w-[336px] sm:max-w-[540px] lg:max-w-[560px] bg-slate-900 p-2 sm:p-2.5 rounded-[36px] sm:rounded-t-[20px] sm:rounded-b-none border-[3px] sm:border border-slate-800 shadow-2xl relative transition-all">
+        
+        {/* Mobile-only: Dynamic Island / Camera Notch */}
+        <div className="block sm:hidden flex justify-center my-0.5">
+          <div className="h-3 w-16 bg-black rounded-full flex items-center justify-end px-1.5 shadow-inner">
+            <span className="h-1.5 w-1.5 rounded-full bg-slate-800" />
           </div>
         </div>
 
-        {/* Right: Mode Tabs */}
-        <div
-          role="tablist"
-          aria-label="Mode percakapan AI"
-          className="flex items-center p-1 rounded-xl bg-black/20 backdrop-blur-xs border border-white/15"
-        >
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === "lead"}
-            onClick={() => handleTabChange("lead")}
-            className={`px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-lg text-xs font-bold transition-all ${
-              activeTab === "lead"
-                ? "bg-white text-blue-700 shadow-sm shadow-black/10"
-                : "text-white/80 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            Lead Generation
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === "service"}
-            onClick={() => handleTabChange("service")}
-            className={`px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-lg text-xs font-bold transition-all ${
-              activeTab === "service"
-                ? "bg-white text-blue-700 shadow-sm shadow-black/10"
-                : "text-white/80 hover:text-white hover:bg-white/10"
-            }`}
-          >
-            Customer Service
-          </button>
-        </div>
-      </div>
-
-      {/* =================================================================== */}
-      {/* 2. CONVERSATION AREA (THE ONLY SCROLLABLE PART)                     */}
-      {/* Re-mounts on tab switch via key={activeTab} for clean reset         */}
-      {/* =================================================================== */}
-      <ChatConversationArea key={activeTab} activeTab={activeTab} />
-
-      {/* =================================================================== */}
-      {/* 3. INPUT BAR (Fixed at bottom of component, shrink-0, visual only)   */}
-      {/* =================================================================== */}
-      <div className="shrink-0 bg-white border-t border-slate-200/90 px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-3 shadow-2xs">
-        <div className="flex-1 flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-slate-100/90 border border-slate-200/80 text-xs sm:text-sm text-slate-600">
-          <span className="truncate">Ketik pesan Anda...</span>
+        {/* Desktop-only: Laptop Webcam Dot */}
+        <div className="hidden sm:flex justify-center mb-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-slate-700 block shadow-inner" />
         </div>
 
-        <button
-          type="button"
-          aria-label="Kirim pesan simulasi"
-          className="h-9 w-9 sm:h-10 sm:w-10 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-95 text-white flex items-center justify-center shrink-0 shadow-sm shadow-blue-600/30 transition-all cursor-default"
-        >
-          <ArrowUp className="h-4 w-4 sm:h-5 sm:w-5" />
-        </button>
+        {/* Inner Screen Container */}
+        <div className="w-full h-[470px] sm:h-[480px] lg:h-[490px] rounded-[24px] sm:rounded-lg overflow-hidden bg-white flex flex-col border border-slate-800/80 shadow-inner">
+          
+          {/* 1. Header (Solid Primary Blue, Clean & Professional) */}
+          <div className="shrink-0 bg-blue-600 text-white px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between gap-2 border-b border-blue-700 z-10 shadow-xs">
+            {/* Left: Brand & Status */}
+            <div className="flex items-center gap-2 shrink-0">
+              <div className="flex items-center justify-center h-7 w-7 rounded-lg bg-white/15 border border-white/20">
+                <Image
+                  src="/intiora-icon.png"
+                  alt="Intiora Logo"
+                  width={18}
+                  height={18}
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <div className="flex items-center gap-1">
+                  <span className="text-xs sm:text-sm font-bold tracking-tight text-white">
+                    Intiora AI
+                  </span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-[9px] sm:text-[10px] font-medium text-blue-100">
+                    Online 24/7
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Mode Tabs */}
+            <div
+              role="tablist"
+              aria-label="Mode percakapan AI"
+              className="flex items-center p-0.5 rounded-lg bg-blue-700/60 border border-blue-500/40 shrink-0"
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeTab === "lead"}
+                onClick={() => handleTabChange("lead")}
+                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-bold whitespace-nowrap transition-all ${
+                  activeTab === "lead"
+                    ? "bg-white text-blue-600 shadow-xs"
+                    : "text-white/80 hover:text-white"
+                }`}
+              >
+                Lead Generation
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeTab === "service"}
+                onClick={() => handleTabChange("service")}
+                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-bold whitespace-nowrap transition-all ${
+                  activeTab === "service"
+                    ? "bg-white text-blue-600 shadow-xs"
+                    : "text-white/80 hover:text-white"
+                }`}
+              >
+                Customer Service
+              </button>
+            </div>
+          </div>
+
+          {/* 2. Conversation Area (The Only Scrollable Part) */}
+          <ChatConversationArea key={activeTab} activeTab={activeTab} />
+
+          {/* 3. Input Bar (Fixed at bottom) */}
+          <div className="shrink-0 bg-white border-t border-slate-200 px-3 py-2 flex items-center justify-between gap-2 shadow-2xs">
+            <div className="flex-1 flex items-center px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-xs text-slate-500">
+              <span className="truncate">Ketik pesan Anda...</span>
+            </div>
+
+            <button
+              type="button"
+              aria-label="Kirim pesan simulasi"
+              className="h-8 w-8 rounded-lg bg-blue-600 hover:bg-blue-700 active:scale-95 text-white flex items-center justify-center shrink-0 shadow-xs transition-all cursor-default"
+            >
+              <ArrowUp className="h-4 w-4" />
+            </button>
+          </div>
+
+        </div>
+
+        {/* Mobile-only: Home Indicator Bar */}
+        <div className="block sm:hidden flex justify-center mt-1.5 mb-0.5">
+          <div className="w-24 h-1 bg-slate-500/60 rounded-full" />
+        </div>
+
       </div>
+
+      {/* Desktop-only: Laptop Base Keyboard Deck Lip */}
+      <div className="hidden sm:flex w-full max-w-[600px] lg:max-w-[620px] h-3 sm:h-3.5 bg-slate-200 border-t border-slate-300 rounded-b-xl shadow-md relative justify-center items-start">
+        <div className="w-14 sm:w-16 h-1 bg-slate-400/80 rounded-b-xs" />
+      </div>
+
+      {/* Desktop-only: Laptop Desk Shadow */}
+      <div className="hidden sm:block w-full max-w-[540px] h-2 bg-slate-900/10 blur-sm rounded-full mx-auto" />
     </div>
   );
 }
