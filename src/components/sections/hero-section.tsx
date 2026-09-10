@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/container";
-import { Sparkles } from "lucide-react";
 import { IntioraChatDemo } from "@/components/demo/intiora-chat-demo";
 
 // Official WhatsApp vector icon
@@ -35,10 +34,9 @@ export function HeroSection() {
           {/* LEFT COLUMN: HERO HEADLINE & CTAs (Server Component) (50%)               */}
           {/* ========================================================================= */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
-            {/* Top Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/95 px-3 py-1 text-xs font-bold text-blue-600 shadow-xs backdrop-blur-xs mb-4">
-              <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
-              <span>Otomasi Customer Service &amp; Sales 24/7</span>
+            {/* Top Eyebrow Badge (Clean, No AI-slop dot) */}
+            <div className="inline-flex items-center rounded-full border border-blue-200/90 bg-white/95 px-3.5 py-1 text-xs font-semibold text-blue-700 shadow-2xs backdrop-blur-xs mb-4">
+              <span>Platform AI Agent &amp; Omnichannel CRM</span>
             </div>
 
             {/* Main Headline (Paraphrased & Scaled Down Font) */}
@@ -67,12 +65,6 @@ export function HeroSection() {
               >
                 <span>Mulai Coba Gratis</span>
               </a>
-            </div>
-
-            {/* Sub-trust text */}
-            <div className="mt-5 flex items-center gap-2 text-xs text-slate-500 font-medium">
-              <Sparkles className="h-4 w-4 text-blue-600 shrink-0" />
-              <span>Setup instan dalam 5 menit &bull; Tanpa keahlian coding &bull; Resmi WhatsApp Business API</span>
             </div>
           </div>
 

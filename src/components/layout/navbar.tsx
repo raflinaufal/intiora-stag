@@ -196,10 +196,11 @@ export function Navbar() {
           <Image
             src="/logo-intiora.webp"
             alt="Intiora Logo"
-            width={130}
+            width={142}
             height={32}
             className="h-8 md:h-9 w-auto object-contain transition-transform group-hover:scale-105"
             priority
+            unoptimized
           />
         </a>
 
@@ -523,9 +524,10 @@ export function Navbar() {
                 <Image
                   src="/logo-intiora.webp"
                   alt="Intiora Logo"
-                  width={116}
-                  height={30}
+                  width={120}
+                  height={28}
                   className="h-7 w-auto object-contain"
+                  unoptimized
                 />
                 <button
                   type="button"
