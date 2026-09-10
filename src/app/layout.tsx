@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import { JsonLd } from "@/components/seo/json-ld";
 
 const inter = Inter({
@@ -82,6 +83,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-white text-slate-900 selection:bg-blue-600 selection:text-white font-sans">
         <Navbar />
         <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

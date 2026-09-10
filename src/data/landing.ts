@@ -58,7 +58,7 @@ export const statisticsData = {
     value: "+50%",
     label: "Peningkatan Produktivitas",
     description:
-      "Rata-rata peningkatan produktivitas tim customer service setelah menggunakan Nexa AI selama 3 bulan pertama.",
+      "Rata-rata peningkatan produktivitas tim customer service setelah menggunakan Intiora selama 3 bulan pertama.",
   },
   stats: [
     { value: "70%", label: "Response time lebih cepat" },
@@ -67,7 +67,7 @@ export const statisticsData = {
   ],
   testimonial: {
     quote:
-      "Sejak menggunakan Nexa AI, closing rate kami naik dari 15% ke 40%. Tim customer service bisa handle 3x lebih banyak percakapan tanpa menambah headcount.",
+      "Sejak menggunakan Intiora, closing rate kami naik dari 15% ke 40%. Tim customer service bisa handle 3x lebih banyak percakapan tanpa menambah headcount.",
     author: "Rina Hartono",
     role: "Head of Customer Success",
     company: "ShopNest Indonesia",
@@ -137,7 +137,7 @@ export const productsData = {
 export const industriesData = {
   heading: "Satu platform, disesuaikan dengan industri Anda",
   description:
-    "Nexa AI dirancang untuk memenuhi kebutuhan spesifik berbagai industri. Solusi yang tepat untuk setiap tantangan bisnis Anda.",
+    "Intiora dirancang untuk memenuhi kebutuhan spesifik berbagai industri. Solusi yang tepat untuk setiap tantangan bisnis Anda.",
   industries: [
     {
       id: "kesehatan",
@@ -187,7 +187,7 @@ export const industriesData = {
 export const integrationsData = {
   heading: "Hubungkan Semua Tools Bisnismu dalam Satu Platform",
   description:
-    "Integrasikan Nexa AI dengan tools yang sudah Anda gunakan. WhatsApp Business API, Instagram, CRM, e-commerce, dan platform bisnis lainnya.",
+    "Integrasikan Intiora dengan tools yang sudah Anda gunakan. WhatsApp Business API, Instagram, CRM, e-commerce, dan platform bisnis lainnya.",
   cta: { label: "Lihat Semua Integrasi", href: "#integrasi" },
   integrations: [
     { name: "WhatsApp", icon: "MessageCircle" as const },
@@ -417,9 +417,9 @@ export const pricingData = {
 };
 
 export const testimonialsData = {
-  heading: "Bukti Nyata dari Bisnis yang Menggunakan Nexa AI",
+  heading: "Bukti Nyata dari Bisnis yang Menggunakan Intiora",
   description:
-    "Dengarkan langsung dari para pelaku bisnis yang telah merasakan dampak Nexa AI terhadap pertumbuhan bisnis mereka.",
+    "Dengarkan langsung dari para pelaku bisnis yang telah merasakan dampak Intiora terhadap pertumbuhan bisnis mereka.",
   testimonials: [
     {
       name: "Ahmad Rizki",
@@ -427,7 +427,7 @@ export const testimonialsData = {
       role: "CEO",
       result: "Response time turun 70%",
       quote:
-        "Nexa AI mengubah cara kami melayani pelanggan. Response time kami turun drastis dan customer satisfaction meningkat signifikan.",
+        "Intiora mengubah cara kami melayani pelanggan. Response time kami turun drastis dan customer satisfaction meningkat signifikan.",
     },
     {
       name: "Sari Dewi",
@@ -472,10 +472,48 @@ export const testimonialsData = {
   ],
 };
 
+export const faqData = {
+  heading: "Pertanyaan yang Sering Diajukan",
+  description:
+    "Semua yang perlu Anda ketahui tentang implementasi AI Agent dan Omnichannel CRM Intiora.",
+  faqs: [
+    {
+      question: "Apakah Intiora menggunakan WhatsApp Business API resmi (Official Meta)?",
+      answer:
+        "Ya, Intiora menggunakan integrasi resmi WhatsApp Business API (Cloud API) yang terhubung langsung dengan Meta. Akun bisnis Anda aman dari risiko pemblokiran nomor, memiliki performa pengiriman pesan tercepat, dan memenuhi syarat untuk pengajuan centang hijau (verified green badge).",
+    },
+    {
+      question: "Berapa lama waktu yang dibutuhkan hingga AI Agent siap digunakan?",
+      answer:
+        "Sangat cepat. Rata-rata tim bisnis kami dapat go-live hanya dalam 5 hingga 15 menit. Anda cukup mengunggah dokumen FAQ, katalog produk (PDF/Excel), atau tautan website Anda ke Knowledge Base Intiora, lalu menghubungkan nomor WhatsApp dan akun Instagram Anda.",
+    },
+    {
+      question: "Apakah AI Agent bisa memahami bahasa Indonesia informal, singkatan, dan typo?",
+      answer:
+        "Tentu saja. Model AI Intiora telah dilatih secara mendalam dengan ratusan ribu percakapan e-commerce dan customer service di Indonesia, sehingga sangat luwes memahami singkatan, bahasa gaul, gaya bahasa santai, maupun kesalahan ketik (typo) pelanggan secara kontekstual.",
+    },
+    {
+      question: "Bagaimana jika ada pertanyaan sulit atau komplain mendesak dari pelanggan?",
+      answer:
+        "Intiora dilengkapi sistem Human Handoff pintar. Saat AI mendeteksi sentimen negatif, permintaan eskalasi, atau pertanyaan di luar cakupan knowledge base, percakapan akan otomatis dialihkan ke staf Customer Service Anda disertai rangkuman inti masalah secara instan.",
+    },
+    {
+      question: "Apakah Intiora bisa diintegrasikan dengan database atau POS kami?",
+      answer:
+        "Ya, Intiora menyediakan dokumentasi RESTful API lengkap, Webhook real-time, dan integrasi bawaan dengan Google Sheets, Shopify, WooCommerce, Meta CAPI, serta CRM pihak ketiga sehingga stok dan data transaksi bisa tersinkronisasi otomatis.",
+    },
+    {
+      question: "Apakah ada masa uji coba gratis sebelum berlangganan?",
+      answer:
+        "Ya! Kami menyediakan Free Trial selama 14 hari dengan akses fitur penuh tanpa perlu memasukkan kartu kredit. Anda bisa mencoba performa AI Agent dan mengevaluasi peningkatannya pada bisnis Anda secara langsung.",
+    },
+  ],
+};
+
 export const finalCtaData = {
   heading: "Ubah Setiap Percakapan Jadi Penjualan",
   description:
-    "Mulai gunakan Nexa AI hari ini dan rasakan bagaimana AI Agent dapat mengubah cara bisnis Anda melayani pelanggan dan meningkatkan penjualan.",
+    "Mulai gunakan Intiora hari ini dan rasakan bagaimana AI Agent dapat mengubah cara bisnis Anda melayani pelanggan dan meningkatkan penjualan.",
   primaryCta: { label: "Coba Gratis", href: "#demo" },
   secondaryCta: { label: "Jadwalkan Demo", href: "#demo" },
   trustNote: "Tanpa kartu kredit • Setup dalam hitungan menit",

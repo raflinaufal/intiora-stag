@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://nexa-ai.id/sitemap.xml",
+    sitemap: "https://intiora.ai/sitemap.xml",
   };
 }

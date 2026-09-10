@@ -1,13 +1,27 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
-import { ArrowUp } from "lucide-react";
+import {
+  ShoppingBag,
+  Plane,
+  Stethoscope,
+  GraduationCap,
+  ArrowUp,
+  CheckCircle2,
+  Phone,
+  MoreVertical,
+  Paperclip,
+  Smile,
+  Wifi,
+  Battery,
+  Search,
+} from "lucide-react";
 import {
   ChatMessageItem,
   DemoTabMode,
-  LEAD_GEN_STEPS,
-  CUSTOMER_SERVICE_STEPS,
+  IndustryType,
+  INDUSTRIES,
+  getScenarioSteps,
   ChatAnimationStep,
 } from "@/data/chat-demo";
 import { ChatMessage } from "./chat-message";
@@ -17,24 +31,22 @@ interface IntioraChatDemoProps {
 }
 
 interface ChatConversationAreaProps {
+  industry: IndustryType;
   activeTab: DemoTabMode;
 }
 
-function ChatConversationArea({ activeTab }: ChatConversationAreaProps) {
+function ChatConversationArea({ industry, activeTab }: ChatConversationAreaProps) {
   const [messages, setMessages] = useState<ChatMessageItem[]>([]);
   const conversationRef = useRef<HTMLDivElement>(null);
   const isNearBottomRef = useRef(true);
 
-  // Monitor scroll position to respect user's manual scroll
   const handleScroll = useCallback(() => {
     const el = conversationRef.current;
     if (!el) return;
     const distanceToBottom = el.scrollHeight - el.scrollTop - el.clientHeight;
-    // Considered "near bottom" if within 60px
     isNearBottomRef.current = distanceToBottom <= 60;
   }, []);
 
-  // Smooth scroll to bottom if user is near bottom
   const maybeScrollToBottom = useCallback((smooth = true) => {
     const el = conversationRef.current;
     if (!el) return;
@@ -51,10 +63,8 @@ function ChatConversationArea({ activeTab }: ChatConversationAreaProps) {
     const timeouts: NodeJS.Timeout[] = [];
     isNearBottomRef.current = true;
 
-    const steps: ChatAnimationStep[] =
-      activeTab === "lead" ? LEAD_GEN_STEPS : CUSTOMER_SERVICE_STEPS;
+    const steps: ChatAnimationStep[] = getScenarioSteps(industry, activeTab);
 
-    // Detect prefers-reduced-motion
     const prefersReducedMotion =
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -92,21 +102,21 @@ function ChatConversationArea({ activeTab }: ChatConversationAreaProps) {
     return () => {
       timeouts.forEach(clearTimeout);
     };
-  }, [activeTab, maybeScrollToBottom]);
+  }, [industry, activeTab, maybeScrollToBottom]);
 
   return (
     <div
       ref={conversationRef}
       onScroll={handleScroll}
-      className="flex-1 overflow-y-auto scroll-smooth chat-scrollbar bg-[#f8fafc] p-3 sm:p-3.5 space-y-2 sm:space-y-2.5"
+      className="flex-1 overflow-y-auto scroll-smooth chat-scrollbar bg-[#efeae2]/60 p-3 sm:p-4 space-y-2.5 min-h-0"
       tabIndex={0}
       role="region"
-      aria-label="Area riwayat percakapan demo interaktif"
+      aria-label="Riwayat percakapan WhatsApp Business AI"
     >
-      {/* Date / Security Badge */}
-      <div className="flex justify-center mb-1">
-        <span className="text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold text-slate-500 bg-slate-200/60 px-2.5 py-0.5 rounded-full border border-slate-300/40">
-          WhatsApp Business API Aktif
+      {/* End-to-End Encryption Security Pill */}
+      <div className="flex justify-center my-1">
+        <span className="text-[10px] sm:text-[11px] font-medium text-slate-500 bg-[#f0f2f5] px-3 py-1 rounded-lg border border-slate-200/60 shadow-2xs text-center max-w-[92%] leading-tight">
+          🔒 Pesan terenkripsi secara otomatis melalui WhatsApp Business API Resmi
         </span>
       </div>
 
@@ -119,134 +129,268 @@ function ChatConversationArea({ activeTab }: ChatConversationAreaProps) {
 }
 
 export function IntioraChatDemo({ className = "" }: IntioraChatDemoProps) {
+  const [activeIndustry, setActiveIndustry] = useState<IndustryType>("retail");
   const [activeTab, setActiveTab] = useState<DemoTabMode>("lead");
 
-  const handleTabChange = (newTab: DemoTabMode) => {
-    if (newTab === activeTab) return;
-    setActiveTab(newTab);
+  const currentMeta =
+    INDUSTRIES.find((ind) => ind.id === activeIndustry) || INDUSTRIES[0];
+
+  const industryIcons: Record<IndustryType, typeof ShoppingBag> = {
+    retail: ShoppingBag,
+    travel: Plane,
+    clinic: Stethoscope,
+    education: GraduationCap,
   };
 
+  const StoreIcon = industryIcons[activeIndustry];
+
   return (
-    <div className={`w-full flex flex-col items-center select-none ${className}`}>
+    <div className={`w-full flex flex-col items-center select-none relative ${className}`}>
+      
       {/* =================================================================== */}
-      {/* RESPONSIVE DEVICE WIREFRAME                                         */}
-      {/* Desktop/Tablet: Laptop frame                                        */}
-      {/* Mobile: Smartphone/iPhone frame                                     */}
+      {/* TOP PILL SELECTOR: SWITCH 4 INDUSTRY SCENARIOS                      */}
+      {/* 4-column equal grid: NEVER OVERFLOWS, NEVER CLIPPED                */}
       {/* =================================================================== */}
-      <div className="w-full max-w-[336px] sm:max-w-[540px] lg:max-w-[560px] bg-slate-900 p-2 sm:p-2.5 rounded-[36px] sm:rounded-t-[20px] sm:rounded-b-none border-[3px] sm:border border-slate-800 shadow-2xl relative transition-all">
-        
-        {/* Mobile-only: Dynamic Island / Camera Notch */}
-        <div className="block sm:hidden flex justify-center my-0.5">
-          <div className="h-3 w-16 bg-black rounded-full flex items-center justify-end px-1.5 shadow-inner">
-            <span className="h-1.5 w-1.5 rounded-full bg-slate-800" />
-          </div>
+      <div className="w-full max-w-[324px] sm:max-w-[560px] lg:max-w-[580px] mb-3 sm:mb-4">
+        <div className="grid grid-cols-4 gap-1 p-1 sm:p-1.5 rounded-2xl bg-white/95 border border-slate-200/90 shadow-xs backdrop-blur-md">
+          {INDUSTRIES.map((ind) => {
+            const Icon = industryIcons[ind.id];
+            const isActive = activeIndustry === ind.id;
+            return (
+              <button
+                key={ind.id}
+                type="button"
+                onClick={() => setActiveIndustry(ind.id)}
+                className={`flex items-center justify-center gap-1 sm:gap-1.5 py-1.5 sm:py-2 px-1 rounded-xl text-xs font-bold transition-all cursor-pointer truncate ${
+                  isActive
+                    ? "bg-blue-600 text-white shadow-xs"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                }`}
+              >
+                <Icon className="h-3.5 w-3.5 shrink-0" />
+                <span className="truncate">{ind.shortLabel}</span>
+              </button>
+            );
+          })}
         </div>
+      </div>
 
-        {/* Desktop-only: Laptop Webcam Dot */}
-        <div className="hidden sm:flex justify-center mb-1.5">
-          <span className="h-1.5 w-1.5 rounded-full bg-slate-700 block shadow-inner" />
-        </div>
-
-        {/* Inner Screen Container */}
-        <div className="w-full h-[470px] sm:h-[480px] lg:h-[490px] rounded-[24px] sm:rounded-lg overflow-hidden bg-white flex flex-col border border-slate-800/80 shadow-inner">
+      {/* =================================================================== */}
+      {/* 1. DESKTOP VIEW: REALISTIC LAPTOP FRAME (Hidden on mobile < md)     */}
+      {/* =================================================================== */}
+      <div className="hidden md:flex flex-col items-center w-full max-w-[560px] lg:max-w-[580px]">
+        {/* Laptop Display Lid */}
+        <div className="w-full bg-[#18181b] p-2.5 rounded-t-2xl border border-zinc-800 shadow-2xl relative">
           
-          {/* 1. Header (Solid Primary Blue, Clean & Professional) */}
-          <div className="shrink-0 bg-blue-600 text-white px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between gap-2 border-b border-blue-700 z-10 shadow-xs">
-            {/* Left: Brand & Status */}
-            <div className="flex items-center gap-2 shrink-0">
-              <div className="flex items-center justify-center h-7 w-7 rounded-lg bg-white/15 border border-white/20">
-                <Image
-                  src="/intiora-icon.png"
-                  alt="Intiora Logo"
-                  width={18}
-                  height={18}
-                  className="object-contain"
-                />
-              </div>
-              <div>
-                <div className="flex items-center gap-1">
-                  <span className="text-xs sm:text-sm font-bold tracking-tight text-white">
-                    Intiora AI
-                  </span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-[9px] sm:text-[10px] font-medium text-blue-100">
-                    Online 24/7
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Mode Tabs */}
-            <div
-              role="tablist"
-              aria-label="Mode percakapan AI"
-              className="flex items-center p-0.5 rounded-lg bg-blue-700/60 border border-blue-500/40 shrink-0"
-            >
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activeTab === "lead"}
-                onClick={() => handleTabChange("lead")}
-                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-bold whitespace-nowrap transition-all ${
-                  activeTab === "lead"
-                    ? "bg-white text-blue-600 shadow-xs"
-                    : "text-white/80 hover:text-white"
-                }`}
-              >
-                Lead Generation
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activeTab === "service"}
-                onClick={() => handleTabChange("service")}
-                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-bold whitespace-nowrap transition-all ${
-                  activeTab === "service"
-                    ? "bg-white text-blue-600 shadow-xs"
-                    : "text-white/80 hover:text-white"
-                }`}
-              >
-                Customer Service
-              </button>
-            </div>
+          {/* Top Webcam Lens */}
+          <div className="flex justify-center items-center mb-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 ring-1 ring-zinc-800 shadow-inner block" />
           </div>
 
-          {/* 2. Conversation Area (The Only Scrollable Part) */}
-          <ChatConversationArea key={activeTab} activeTab={activeTab} />
+          {/* Screen Content: Authentic WhatsApp Web & Omnichannel Interface */}
+          <div className="w-full h-[470px] rounded-lg overflow-hidden bg-white flex flex-col border border-zinc-800/90 shadow-inner">
+            
+            {/* WhatsApp Web Header */}
+            <div className="h-14 bg-[#f0f2f5] border-b border-[#e9edef] px-4 flex items-center justify-between gap-3 shrink-0">
+              {/* Profile Info */}
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="h-9 w-9 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <StoreIcon className="h-5 w-5" />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-sm font-bold text-slate-900 truncate">
+                      {currentMeta.storeName}
+                    </span>
+                    <CheckCircle2 className="h-4 w-4 text-emerald-600 fill-emerald-600/20 shrink-0" />
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                    <span className="text-[11px] font-medium text-slate-500">
+                      Online · Akun Bisnis Resmi
+                    </span>
+                  </div>
+                </div>
+              </div>
 
-          {/* 3. Input Bar (Fixed at bottom) */}
-          <div className="shrink-0 bg-white border-t border-slate-200 px-3 py-2 flex items-center justify-between gap-2 shadow-2xs">
-            <div className="flex-1 flex items-center px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-xs text-slate-500">
-              <span className="truncate">Ketik pesan Anda...</span>
+              {/* Mode Toggle & Icons */}
+              <div className="flex items-center gap-2 shrink-0">
+                {/* Mode Segmented Pills */}
+                <div className="flex items-center p-0.5 rounded-lg bg-slate-200/80 border border-slate-300/60">
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("lead")}
+                    className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                      activeTab === "lead"
+                        ? "bg-white text-slate-900 shadow-xs"
+                        : "text-slate-600 hover:text-slate-900"
+                    }`}
+                  >
+                    Lead Gen
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("service")}
+                    className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                      activeTab === "service"
+                        ? "bg-white text-slate-900 shadow-xs"
+                        : "text-slate-600 hover:text-slate-900"
+                    }`}
+                  >
+                    Customer Service
+                  </button>
+                </div>
+
+                {/* WhatsApp Search & Menu */}
+                <div className="flex items-center gap-1 text-slate-500">
+                  <Search className="h-4 w-4" />
+                  <MoreVertical className="h-4 w-4" />
+                </div>
+              </div>
             </div>
 
-            <button
-              type="button"
-              aria-label="Kirim pesan simulasi"
-              className="h-8 w-8 rounded-lg bg-blue-600 hover:bg-blue-700 active:scale-95 text-white flex items-center justify-center shrink-0 shadow-xs transition-all cursor-default"
-            >
-              <ArrowUp className="h-4 w-4" />
-            </button>
+            {/* Conversation Stream */}
+            <ChatConversationArea
+              key={`desktop-${activeIndustry}-${activeTab}`}
+              industry={activeIndustry}
+              activeTab={activeTab}
+            />
+
+            {/* WhatsApp Web Bottom Input Bar */}
+            <div className="h-14 bg-[#f0f2f5] border-t border-[#e9edef] px-4 flex items-center gap-3 shrink-0">
+              <Smile className="h-5 w-5 text-slate-500 shrink-0 cursor-default" />
+              <Paperclip className="h-5 w-5 text-slate-500 shrink-0 cursor-default" />
+              <div className="flex-1 flex items-center px-3.5 py-2 rounded-lg bg-white border border-slate-200 text-xs text-slate-500 shadow-2xs">
+                <span>Ketik pesan ke {currentMeta.storeName}...</span>
+              </div>
+              <button
+                type="button"
+                aria-label="Kirim pesan simulasi"
+                className="h-8 w-8 rounded-full bg-blue-600 hover:bg-blue-700 active:scale-95 text-white flex items-center justify-center shrink-0 shadow-xs transition-all cursor-default"
+              >
+                <ArrowUp className="h-4 w-4" />
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Laptop Aluminum Base Chassis */}
+        <div className="w-full h-3.5 bg-[#27272a] rounded-b-xl border-t border-zinc-700 relative flex justify-center items-start shadow-xl">
+          <div className="w-16 h-1 bg-zinc-950/80 rounded-b-md mx-auto" />
+        </div>
+        {/* Soft Contact Shadow */}
+        <div className="w-[90%] h-2.5 mx-auto bg-black/15 blur-md rounded-full mt-0.5" />
+      </div>
+
+      {/* =================================================================== */}
+      {/* 2. MOBILE VIEW: REALISTIC SMARTPHONE FRAME (Visible on mobile < md) */}
+      {/* =================================================================== */}
+      <div className="flex md:hidden flex-col items-center w-full max-w-[324px]">
+        {/* Phone Outer Shell */}
+        <div className="w-full bg-[#18181b] p-2 rounded-[42px] border-[3px] border-[#27272a] shadow-2xl relative">
+          
+          {/* Dynamic Island Notch */}
+          <div className="h-4 w-24 bg-black rounded-full mx-auto flex items-center justify-between px-2.5 mb-1.5 shadow-inner">
+            <span className="h-1.5 w-1.5 rounded-full bg-zinc-900" />
+            <span className="h-1 w-1 rounded-full bg-zinc-800" />
+          </div>
+
+          {/* Phone Screen */}
+          <div className="w-full h-[470px] rounded-[30px] overflow-hidden bg-white flex flex-col border border-zinc-900 shadow-inner">
+            
+            {/* iOS Status Bar */}
+            <div className="bg-[#f0f2f5] px-4 pt-1.5 pb-1 flex items-center justify-between text-[11px] font-semibold text-slate-800 select-none">
+              <span>09:41</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] font-bold">5G</span>
+                <Wifi className="w-3 h-3" />
+                <Battery className="w-3.5 h-3.5" />
+              </div>
+            </div>
+
+            {/* WhatsApp Mobile Header */}
+            <div className="bg-[#f0f2f5] border-b border-[#e9edef] px-3 py-2 flex items-center justify-between gap-2 shrink-0">
+              <div className="flex items-center gap-2 min-w-0">
+                <div className="h-8 w-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <StoreIcon className="h-4 w-4" />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs font-bold text-slate-900 truncate max-w-[95px]">
+                      {currentMeta.storeName}
+                    </span>
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 fill-emerald-600/20 shrink-0" />
+                  </div>
+                  <span className="text-[10px] text-emerald-600 font-semibold block leading-none">
+                    online
+                  </span>
+                </div>
+              </div>
+
+              {/* Mobile Mode Switcher */}
+              <div className="flex items-center p-0.5 rounded-lg bg-slate-200/80 border border-slate-300/60 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("lead")}
+                  className={`px-2 py-0.5 rounded-md text-[10px] font-bold transition-all cursor-pointer ${
+                    activeTab === "lead"
+                      ? "bg-white text-slate-900 shadow-xs"
+                      : "text-slate-600"
+                  }`}
+                >
+                  Lead Gen
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("service")}
+                  className={`px-2 py-0.5 rounded-md text-[10px] font-bold transition-all cursor-pointer ${
+                    activeTab === "service"
+                      ? "bg-white text-slate-900 shadow-xs"
+                      : "text-slate-600"
+                  }`}
+                >
+                  CS
+                </button>
+              </div>
+
+              <div className="flex items-center text-slate-600">
+                <Phone className="h-3.5 w-3.5" />
+                <MoreVertical className="h-3.5 w-3.5 ml-1" />
+              </div>
+            </div>
+
+            {/* Conversation Stream */}
+            <ChatConversationArea
+              key={`mobile-${activeIndustry}-${activeTab}`}
+              industry={activeIndustry}
+              activeTab={activeTab}
+            />
+
+            {/* Mobile Bottom Input Bar */}
+            <div className="bg-[#f0f2f5] border-t border-[#e9edef] px-3 py-2 flex items-center gap-2 shrink-0">
+              <div className="flex-1 flex items-center px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs text-slate-500">
+                <span className="truncate">Ketik pesan...</span>
+              </div>
+              <button
+                type="button"
+                aria-label="Kirim simulasi"
+                className="h-8 w-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs"
+              >
+                <ArrowUp className="h-4 w-4" />
+              </button>
+            </div>
+
+          </div>
+
+          {/* iOS Home Indicator */}
+          <div className="flex justify-center mt-2">
+            <div className="w-24 h-1 bg-zinc-400/80 rounded-full" />
           </div>
 
         </div>
-
-        {/* Mobile-only: Home Indicator Bar */}
-        <div className="block sm:hidden flex justify-center mt-1.5 mb-0.5">
-          <div className="w-24 h-1 bg-slate-500/60 rounded-full" />
-        </div>
-
       </div>
 
-      {/* Desktop-only: Laptop Base Keyboard Deck Lip */}
-      <div className="hidden sm:flex w-full max-w-[600px] lg:max-w-[620px] h-3 sm:h-3.5 bg-slate-200 border-t border-slate-300 rounded-b-xl shadow-md relative justify-center items-start">
-        <div className="w-14 sm:w-16 h-1 bg-slate-400/80 rounded-b-xs" />
-      </div>
-
-      {/* Desktop-only: Laptop Desk Shadow */}
-      <div className="hidden sm:block w-full max-w-[540px] h-2 bg-slate-900/10 blur-sm rounded-full mx-auto" />
     </div>
   );
 }
