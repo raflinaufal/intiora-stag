@@ -18,8 +18,8 @@ function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden flex items-center justify-center pt-8 pb-16 lg:pt-14 lg:pb-24">
-      {/* Background Banner with optimized WebP */}
+    <section className="relative min-h-[92vh] w-full overflow-hidden flex items-center justify-center -mt-[72px] pt-[96px] pb-16 lg:pt-[118px] lg:pb-24">
+      {/* Background Banner extending seamlessly behind the navbar */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-90"
         style={{ backgroundImage: `url('/background-banner.webp')` }}
@@ -29,33 +29,33 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/30 via-transparent to-white/60 pointer-events-none" />
 
       <Container className="relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* ========================================================================= */}
           {/* LEFT COLUMN: HERO HEADLINE & CTAs (Server Component) (50%)               */}
           {/* ========================================================================= */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
             {/* Top Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/95 px-3.5 py-1 text-xs font-bold text-blue-600 shadow-xs backdrop-blur-xs mb-5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/95 px-3 py-1 text-xs font-bold text-blue-600 shadow-xs backdrop-blur-xs mb-4">
               <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
-              <span>#1 AI Agent Customer Service &amp; Sales</span>
+              <span>Otomasi Customer Service &amp; Sales 24/7</span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[44px] xl:text-[48px] font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-              AI Agent &amp; Omnichannel CRM: Dari Chat Pertama Jadi Pelanggan Seumur Hidup
+            {/* Main Headline (Paraphrased & Scaled Down Font) */}
+            <h1 className="text-2xl sm:text-3xl md:text-[32px] lg:text-[36px] xl:text-[40px] font-extrabold tracking-tight text-slate-900 leading-[1.2]">
+              AI Agent Omnichannel: Ubah Setiap Percakapan Jadi Penjualan Nyata &amp; Pelanggan Setia
             </h1>
 
-            {/* Subtitle Description */}
-            <p className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl font-normal">
-              Pakai AI agent, CRM Omnichannel, dan follow-up otomatis untuk mengubah lebih banyak percakapan jadi penjualan, sekaligus tahu persis iklan mana yang berujung closing, dan bikin customer balik lagi.
+            {/* Subtitle Description (Paraphrased & Scaled Down Font) */}
+            <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl font-normal">
+              Tingkatkan respon chat dan closing rate bisnis Anda. Intiora mengintegrasikan WhatsApp, Instagram, dan live chat dengan AI cerdas untuk follow-up otomatis, kualifikasi prospek, serta pelacakan iklan yang akurat.
             </p>
 
             {/* Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4 w-full sm:w-auto">
+            <div className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <a
                 href="#demo"
-                className="inline-flex h-12 items-center justify-center gap-2.5 rounded-[10px] bg-blue-600 px-6 text-sm sm:text-base font-semibold text-white shadow-md shadow-blue-600/20 hover:bg-blue-700 active:scale-[0.98] transition-all"
+                className="inline-flex h-11 sm:h-12 items-center justify-center gap-2.5 rounded-[10px] bg-blue-600 px-5 sm:px-6 text-sm sm:text-base font-semibold text-white shadow-md shadow-blue-600/20 hover:bg-blue-700 active:scale-[0.98] transition-all"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 <span>WhatsApp Kami</span>
@@ -63,16 +63,16 @@ export function HeroSection() {
 
               <a
                 href="#demo"
-                className="inline-flex h-12 items-center justify-center rounded-[10px] border border-blue-600 bg-white px-6 text-sm sm:text-base font-semibold text-blue-600 hover:bg-blue-50/80 active:scale-[0.98] transition-all"
+                className="inline-flex h-11 sm:h-12 items-center justify-center rounded-[10px] border border-blue-600 bg-white px-5 sm:px-6 text-sm sm:text-base font-semibold text-blue-600 hover:bg-blue-50/80 active:scale-[0.98] transition-all"
               >
                 <span>Mulai Coba Gratis</span>
               </a>
             </div>
 
             {/* Sub-trust text */}
-            <div className="mt-6 flex items-center gap-2 text-xs text-slate-500 font-medium">
+            <div className="mt-5 flex items-center gap-2 text-xs text-slate-500 font-medium">
               <Sparkles className="h-4 w-4 text-blue-600 shrink-0" />
-              <span>Setup mudah dalam 5 menit &bull; Tanpa keahlian coding &bull; Resmi WhatsApp Business API</span>
+              <span>Setup instan dalam 5 menit &bull; Tanpa keahlian coding &bull; Resmi WhatsApp Business API</span>
             </div>
           </div>
 

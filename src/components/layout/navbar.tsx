@@ -156,6 +156,18 @@ export function Navbar() {
     };
   }, [isMobileOpen]);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Monitor scroll for dynamic transparent-to-frosted navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 15);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleMouseEnter = (type: "fitur" | "solusi") => {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
@@ -172,7 +184,11 @@ export function Navbar() {
   return (
     <header
       ref={navRef}
-      className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-md transition-all"
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled || activeDropdown !== null || isMobileOpen
+          ? "border-b border-slate-200/80 bg-white/85 backdrop-blur-md shadow-xs"
+          : "border-b border-transparent bg-transparent"
+      }`}
     >
       <Container className="flex h-[72px] items-center justify-between">
         {/* Left: Intiora Logo */}
