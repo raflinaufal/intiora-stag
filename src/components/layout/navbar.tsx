@@ -178,7 +178,7 @@ export function Navbar() {
         {/* Left: Intiora Logo */}
         <a href="#" className="flex items-center gap-2 shrink-0 group">
           <Image
-            src="/logointiora-clean.png"
+            src="/logo-intiora.webp"
             alt="Intiora Logo"
             width={130}
             height={32}
@@ -505,7 +505,7 @@ export function Navbar() {
               {/* Top Header of Drawer */}
               <div className="h-[72px] px-6 border-b border-slate-100 flex items-center justify-between shrink-0">
                 <Image
-                  src="/logointiora-clean.png"
+                  src="/logo-intiora.webp"
                   alt="Intiora Logo"
                   width={116}
                   height={30}

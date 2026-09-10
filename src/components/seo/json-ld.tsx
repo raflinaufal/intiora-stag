@@ -4,7 +4,7 @@ export function JsonLd() {
     "@type": "Organization",
     name: "Intiora Indonesia",
     url: "https://intiora.ai",
-    logo: "https://intiora.ai/logointiora-clean.png",
+    logo: "https://intiora.ai/logo-intiora.webp",
     description:
       "Platform AI Agent Omnichannel untuk Customer Service & Sales 24/7 di Indonesia.",
     sameAs: [
