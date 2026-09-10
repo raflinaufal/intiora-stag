@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
@@ -8,7 +8,6 @@ import { navItems, fiturMegaMenu, solusiMegaMenu } from "@/data/landing";
 import {
   ChevronDown,
   Globe,
-  Menu,
   X,
   Bot,
   MessageSquare,
@@ -119,17 +118,18 @@ function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+// Safe client hydration snapshot
+const subscribe = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
+
 export function Navbar() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot);
   const [activeDropdown, setActiveDropdown] = useState<"fitur" | "solusi" | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState<"fitur" | "solusi" | null>("fitur");
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {

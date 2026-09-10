@@ -84,3 +84,66 @@ html {
 .scroll-snap-start {
   scroll-snap-align: start;
 }
+
+/* Custom subtle scrollbar for Intiora Chat Demo */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 116, 139, 0.6);
+}
+@media (max-width: 640px) {
+  .chat-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .chat-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Light chat message animations */
+@keyframes chatFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-chat-fade-up {
+  animation: chatFadeUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes typingPulse {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.animate-typing-1 {
+  animation: typingPulse 1.2s infinite ease-in-out;
+}
+.animate-typing-2 {
+  animation: typingPulse 1.2s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+.animate-typing-3 {
+  animation: typingPulse 1.2s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
