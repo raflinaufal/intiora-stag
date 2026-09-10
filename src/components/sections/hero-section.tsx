@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import {
-  ArrowUp,
   ShoppingBag,
   Plane,
   Stethoscope,
@@ -32,16 +30,16 @@ export function HeroSection() {
   const [activeLang, setActiveLang] = useState<"indonesia" | "english">("indonesia");
   const [activeIndustry, setActiveIndustry] = useState<number>(0);
 
-  // Map state to corresponding GIF
-  const gifMap: Record<string, string> = {
-    "indonesia-lead": "/intiora_realtime_indonesia_lead.gif",
-    "indonesia-service": "/intiora_realtime_indonesia_customer-service.gif",
-    "english-lead": "/intiora_realtime_english_lead.gif",
-    "english-service": "/intiora_realtime_english_customer-service.gif",
+  // Map state to corresponding cropped video MP4 (super smooth 60fps & lightweight)
+  const videoMap: Record<string, string> = {
+    "indonesia-lead": "/intiora_realtime_indonesia_lead.mp4",
+    "indonesia-service": "/intiora_realtime_indonesia_customer-service.mp4",
+    "english-lead": "/intiora_realtime_english_lead.mp4",
+    "english-service": "/intiora_realtime_english_customer-service.mp4",
   };
 
-  const currentGifKey = `${activeLang}-${activeMode}`;
-  const currentGifSrc = gifMap[currentGifKey] || "/intiora_realtime_indonesia_lead.gif";
+  const currentVideoKey = `${activeLang}-${activeMode}`;
+  const currentVideoSrc = videoMap[currentVideoKey] || "/intiora_realtime_indonesia_lead.mp4";
 
   const industries = [
     { icon: ShoppingBag, label: "Ritel & E-Commerce" },
@@ -51,25 +49,25 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-[92vh] w-full overflow-hidden flex items-center justify-center pt-8 pb-16 lg:pt-14 lg:pb-24">
-      {/* Background Banner with optimized WebP and subtle overlay */}
+    <section className="relative min-h-[90vh] w-full overflow-hidden flex items-center justify-center pt-8 pb-16 lg:pt-12 lg:pb-20">
+      {/* Background Banner with optimized WebP */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-95"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-90"
         style={{ backgroundImage: `url('/background-banner.webp')` }}
       />
-      
-      {/* Ambient gradient overlay for enhanced readability */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/30 via-transparent to-white/60 pointer-events-none" />
+
+      {/* Ambient gradient overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/20 via-transparent to-white/50 pointer-events-none" />
 
       <Container className="relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-center">
           
           {/* ========================================================================= */}
-          {/* LEFT COLUMN: HERO CONTENT & CTAs */}
+          {/* LEFT COLUMN: HERO HEADLINE & CTAs */}
           {/* ========================================================================= */}
           <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-start text-left">
             {/* Top Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/90 px-3.5 py-1 text-xs font-bold text-blue-600 shadow-xs backdrop-blur-xs mb-5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/95 px-3.5 py-1 text-xs font-bold text-blue-600 shadow-xs backdrop-blur-xs mb-5">
               <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
               <span>#1 AI Agent Customer Service &amp; Sales</span>
             </div>
@@ -104,97 +102,80 @@ export function HeroSection() {
 
             {/* Sub-trust text */}
             <div className="mt-6 flex items-center gap-2 text-xs text-slate-500 font-medium">
-              <Sparkles className="h-4 w-4 text-blue-600" />
+              <Sparkles className="h-4 w-4 text-blue-600 shrink-0" />
               <span>Setup mudah dalam 5 menit &bull; Tanpa keahlian coding &bull; Resmi WhatsApp Business API</span>
             </div>
           </div>
 
           {/* ========================================================================= */}
-          {/* RIGHT COLUMN: INTERACTIVE DEVICE WITH REALTIME ANIMATED GIFS */}
+          {/* RIGHT COLUMN: NATURAL VIDEO PLAYER WITH REALTIME AI DEMO */}
           {/* ========================================================================= */}
           <div className="lg:col-span-6 xl:col-span-6 flex items-center justify-center relative">
             
-            {/* Tablet Mockup Outer Bezel */}
-            <div className="w-full max-w-[620px] rounded-[28px] sm:rounded-[36px] bg-slate-950 p-2.5 sm:p-3.5 shadow-2xl shadow-slate-900/25 border border-slate-800 transition-all">
+            {/* Natural Video Container Card without heavy borders or double frames */}
+            <div className="w-full max-w-[590px] rounded-2xl sm:rounded-3xl bg-white shadow-2xl shadow-blue-900/10 border border-slate-200/90 overflow-hidden transition-all">
               
-              {/* Tablet Screen Inner Container */}
-              <div className="rounded-[20px] sm:rounded-[26px] bg-white overflow-hidden relative border border-slate-900/10 flex flex-col">
-                
-                {/* Top Interactive Mode Tabs (Lead Gen vs Customer Service & Language Toggle) */}
-                <div className="bg-slate-900 text-white px-4 py-3 flex items-center justify-between border-b border-slate-800">
-                  
-                  {/* Left: Mode Toggle Pills */}
-                  <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                    <button
-                      type="button"
-                      onClick={() => setActiveMode("lead")}
-                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                        activeMode === "lead"
-                          ? "bg-blue-600 text-white shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                    >
-                      Lead Generation
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActiveMode("service")}
-                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                        activeMode === "service"
-                          ? "bg-blue-600 text-white shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                    >
-                      Customer Service
-                    </button>
-                  </div>
-
-                  {/* Right: Language Switcher */}
-                  <div className="flex items-center gap-1">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setActiveLang(activeLang === "indonesia" ? "english" : "indonesia")
-                      }
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white/10 hover:bg-white/20 text-blue-200 transition-colors"
-                      title="Ganti Bahasa Demo"
-                    >
-                      <Globe className="h-3 w-3" />
-                      <span>{activeLang === "indonesia" ? "ID" : "EN"}</span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Animated Realtime GIF Player */}
-                <div className="relative w-full aspect-[16/10] bg-[#f8fafc] flex items-center justify-center overflow-hidden">
-                  <Image
-                    key={currentGifSrc}
-                    src={currentGifSrc}
-                    alt={`Demo Intiora Realtime ${activeMode} ${activeLang}`}
-                    width={1280}
-                    height={720}
-                    className="w-full h-full object-contain pointer-events-none select-none"
-                    priority
-                    unoptimized
-                  />
-                </div>
-
-                {/* Bottom Mock Chat Input Bar (Exact Cekat.ai Style) */}
-                <div className="p-3 sm:p-3.5 bg-white border-t border-slate-100 flex items-center gap-3">
-                  <div className="flex-1 rounded-full bg-slate-100/90 px-4 py-2 text-xs sm:text-sm text-slate-400 select-none">
-                    Coba Intiora untuk bisnismu...
-                  </div>
+              {/* Sleek Top Control Bar */}
+              <div className="bg-slate-900 text-white px-4 py-3 flex items-center justify-between border-b border-slate-800/80">
+                {/* Mode Switch Tabs */}
+                <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-800 border border-slate-700/60">
                   <button
                     type="button"
-                    className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 hover:bg-blue-700 active:scale-95 transition-all shadow-xs"
+                    onClick={() => setActiveMode("lead")}
+                    className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                      activeMode === "lead"
+                        ? "bg-blue-600 text-white shadow-xs"
+                        : "text-slate-400 hover:text-white"
+                    }`}
                   >
-                    <ArrowUp className="h-4 w-4" />
+                    Lead Generation
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveMode("service")}
+                    className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                      activeMode === "service"
+                        ? "bg-blue-600 text-white shadow-xs"
+                        : "text-slate-400 hover:text-white"
+                    }`}
+                  >
+                    Customer Service
+                  </button>
+                </div>
+
+                {/* Right: Language Switcher */}
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActiveLang(activeLang === "indonesia" ? "english" : "indonesia")
+                    }
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-white/10 hover:bg-white/20 text-blue-200 transition-colors"
+                    title="Ganti Bahasa Demo"
+                  >
+                    <Globe className="h-3 w-3" />
+                    <span>{activeLang === "indonesia" ? "ID" : "EN"}</span>
                   </button>
                 </div>
               </div>
+
+              {/* Natural Live Video Player (No duplicate backgrounds or inputs) */}
+              <div className="relative w-full aspect-[832/550] bg-white flex items-center justify-center overflow-hidden">
+                <video
+                  key={currentVideoSrc}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover block select-none pointer-events-none"
+                >
+                  <source src={currentVideoSrc} type="video/mp4" />
+                </video>
+              </div>
+
             </div>
 
-            {/* Vertical Floating Industry Switcher (Right Edge, Exact Reference Style) */}
+            {/* Vertical Floating Industry Switcher (Right Edge) */}
             <div className="hidden sm:flex flex-col gap-2 absolute -right-3 sm:-right-4 lg:-right-5 top-1/2 -translate-y-1/2 z-20 bg-white/95 p-1.5 rounded-2xl shadow-xl shadow-slate-900/10 border border-slate-200/90 backdrop-blur-sm">
               {industries.map((ind, idx) => {
                 const Icon = ind.icon;
@@ -222,7 +203,7 @@ export function HeroSection() {
         </div>
       </Container>
 
-      {/* Floating Bottom-Right WhatsApp CTA Widget (Persis Referensi Gambar) */}
+      {/* Floating Bottom-Right WhatsApp CTA Widget */}
       <a
         href="#demo"
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-2xl shadow-blue-600/40 hover:bg-blue-700 active:scale-95 transition-all group"
