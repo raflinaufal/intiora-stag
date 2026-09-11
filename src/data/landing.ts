@@ -77,59 +77,169 @@ export const statisticsData = {
 export const productsData = {
   heading: "Empat produk, satu platform",
   description:
-    "Semua kebutuhan customer engagement bisnis Anda dalam satu dashboard terintegrasi. Dari AI Agent hingga broadcast campaign, semuanya ada di sini.",
-  tabs: [
+    "Jelajahi bagaimana AI membantu setiap proses bisnis Anda, dari customer engagement, sales, hingga operasional & keuangan.",
+  items: [
     {
-      id: "ai-agent",
-      title: "AI Agent",
-      subtitle: "Quality, closing, dan follow-up agent 24/7",
+      id: "ai-support",
+      name: "Omnichannel & AI Support",
+      headline: "Satu inbox terpadu dengan asisten AI pintar 24/7.",
       description:
-        "AI Agent yang mampu memahami konteks percakapan, memberikan rekomendasi produk, menjawab FAQ, dan melakukan kualifikasi lead secara otomatis.",
-      features: [
-        "Pemahaman bahasa natural Indonesia",
-        "Knowledge base terintegrasi",
-        "Auto-qualification lead",
-        "Handoff ke human agent",
+        "Kelola pesan WhatsApp, Instagram, marketplace, dan live chat website dalam satu inbox. Dilengkapi AI assistant yang membalas chat, routing tiket, rekomendasi jawaban, dan follow-up otomatis.",
+      badges: [
+        "Semua channel dalam 1 inbox",
+        "AI Knowledge Base 24/7",
+        "Smart Ticket Routing",
       ],
+      subFeatures: [
+        "Omnichannel Inbox (WA, IG, Marketplace, Web)",
+        "AI Customer Support & Auto Handoff",
+        "Team Workspace & Internal Collaboration",
+      ],
+      ctaLabel: "Jelajahi AI Support",
+      ctaHref: "#demo",
     },
+    {
+      id: "crm-marketing",
+      name: "CRM 360 & Marketing",
+      headline: "Data pelanggan terpadu, broadcast tertarget & terukur.",
+      description:
+        "Pantau data customer, riwayat percakapan, segmen, dan consent broadcast dalam satu tempat. Luncurkan broadcast WhatsApp & email massal dengan tracking ROAS dan atribusi penjualan nyata.",
+      badges: [
+        "Customer 360 View",
+        "WA & Email Broadcast",
+        "Pelacakan ROAS & Konversi",
+      ],
+      subFeatures: [
+        "CRM & Data Pelanggan 360",
+        "Marketing & Campaign Automation",
+        "Reports & KPI Dashboard Builder",
+      ],
+      ctaLabel: "Jelajahi CRM & Marketing",
+      ctaHref: "#demo",
+    },
+    {
+      id: "commerce-inventory",
+      name: "Commerce, Inventory & Finance",
+      headline: "Kelola order, stok multi-gudang, hingga invoice otomatis.",
+      description:
+        "Proses order langsung dari chat, kelola katalog produk, sinkronisasi stok on-hand lintas gudang dengan reorder alert, hingga penerbitan invoice PDF dan pencatatan transaksi terpadu.",
+      badges: [
+        "Order & Payment Sync",
+        "Stok Multi-Gudang & Opname",
+        "Invoice PDF & Ledger",
+      ],
+      subFeatures: [
+        "Commerce & Order Management",
+        "Inventory & Stock Control",
+        "Accounting & Finance Otomatis",
+      ],
+      ctaLabel: "Jelajahi Commerce",
+      ctaHref: "#demo",
+    },
+    {
+      id: "workflow-developer",
+      name: "Workflow & Developer Ready",
+      headline: "Otomasi alur kerja visual dan integrasi API tanpa batas.",
+      description:
+        "Rancang automation rule dengan visual trigger & action builder, integrasikan webhook events real-time, akses REST API & SDK docs, serta kelola data HR & penggajian tim.",
+      badges: [
+        "Visual Trigger & Action",
+        "REST API & Custom Webhooks",
+        "HR & People Management",
+      ],
+      subFeatures: [
+        "Workflow Automation & Execution Logs",
+        "Developer & Integration Ready (API/SDK)",
+        "HR, Salary Structure & Team Management",
+      ],
+      ctaLabel: "Jelajahi Automation",
+      ctaHref: "#demo",
+    },
+  ],
+  ecosystemFeatures: [
     {
       id: "omnichannel",
       title: "Omnichannel Inbox",
-      subtitle: "Satu inbox untuk semua channel",
       description:
-        "Kelola semua percakapan dari WhatsApp, Instagram, Facebook, Email, dan Website Chat dalam satu inbox terpadu.",
-      features: [
-        "WhatsApp Business API",
-        "Instagram DM & Comments",
-        "Facebook Messenger",
-        "Live Chat Website",
-      ],
+        "Satu inbox untuk WhatsApp, Instagram, marketplace, web chat, dan channel customer service lain.",
+      category: "Engagement",
     },
     {
-      id: "crm",
-      title: "CRM",
-      subtitle: "Kelola relasi pelanggan dengan mudah",
+      id: "ai-support",
+      title: "AI Customer Support",
       description:
-        "CRM ringan yang terintegrasi langsung dengan inbox Anda. Lacak setiap interaksi, kelola pipeline, dan tingkatkan retensi pelanggan.",
-      features: [
-        "Contact management",
-        "Deal pipeline",
-        "Custom fields & tags",
-        "Activity timeline",
-      ],
+        "AI assistant untuk bantu balas chat, routing tiket, rekomendasi jawaban, knowledge base, dan otomatisasi follow-up.",
+      category: "Engagement",
     },
     {
-      id: "broadcast",
-      title: "Broadcast & Campaign",
-      subtitle: "Kirim pesan massal yang personal",
+      id: "crm-360",
+      title: "CRM & Customer 360",
       description:
-        "Broadcast pesan ke ribuan pelanggan sekaligus dengan personalisasi. Buat campaign otomatis berdasarkan segmentasi pelanggan.",
-      features: [
-        "WhatsApp broadcast",
-        "Template message",
-        "Audience segmentation",
-        "Campaign analytics",
-      ],
+        "Data customer, company, label, segment, custom attributes, riwayat percakapan, dan consent broadcast dalam satu tempat.",
+      category: "Data",
+    },
+    {
+      id: "commerce",
+      title: "Commerce Management",
+      description:
+        "Kelola produk, kategori, order, purchase, subscription, coupon, promotion, affiliate, payment method, dan warehouse.",
+      category: "Operasional",
+    },
+    {
+      id: "inventory",
+      title: "Inventory & Stock Control",
+      description:
+        "Stok on-hand, lokasi gudang, mutasi stok, transfer, adjustment, stock opname, reorder alert, dan readiness per channel.",
+      category: "Operasional",
+    },
+    {
+      id: "marketing",
+      title: "Marketing Automation",
+      description:
+        "Broadcast campaign, WhatsApp template, email template, media library, short link, maps import, dan tracking session.",
+      category: "Growth",
+    },
+    {
+      id: "workflow",
+      title: "Workflow Automation",
+      description:
+        "Automation rule, trigger, action builder, execution log, credentials vault, runner/computer management.",
+      category: "Automation",
+    },
+    {
+      id: "collaboration",
+      title: "Team Collaboration",
+      description:
+        "Team workspace, DM internal, RAI/AI agent chat, task planner, file space, assignment, mention, dan activity history.",
+      category: "Productivity",
+    },
+    {
+      id: "reports",
+      title: "Reports & Dashboard",
+      description:
+        "Dashboard builder, KPI overview, saved reports, share link aman, audit akses, dan export CSV.",
+      category: "Analytics",
+    },
+    {
+      id: "finance",
+      title: "Accounting & Finance",
+      description:
+        "Invoice, bill, transaction ledger, chart of accounts, accounting report, payment status, dan PDF document action.",
+      category: "Finance",
+    },
+    {
+      id: "hr",
+      title: "HR & People",
+      description:
+        "Employee data, salary structure, salary component, pay run, my activity, history, dan team report.",
+      category: "HR",
+    },
+    {
+      id: "developer",
+      title: "Developer & Integration Ready",
+      description:
+        "API reference, SDK docs, public key, webhook events, custom API channel, dan integrasi platform resmi.",
+      category: "Developer",
     },
   ],
 };
