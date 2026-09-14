@@ -30,16 +30,20 @@ import {
   Truck,
   ShoppingCart,
   GitBranch,
+  RotateCcw,
+  UserCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // ============================================================================
-// 1. VISUAL MOCKUP 1: CHATBOT AI & WHATSAPP OMNICHANNEL
+// 1. VISUAL MOCKUP 1: CHATBOT AI & WHATSAPP OMNICHANNEL (INTERACTIVE DEMO)
 // ============================================================================
 function ChatOmnichannelVisual() {
+  const [chatStep, setChatStep] = useState<"initial" | "buy" | "paid" | "doctor">("initial");
+
   return (
     <div className="w-full flex flex-col gap-3 p-3 sm:p-5 select-none">
-      {/* Top Status & Channel Indicator */}
+      {/* Top Status & Channel Indicator with Demo Hint */}
       <div className="flex items-center justify-between pb-3 border-b border-slate-200/80">
         <div className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
@@ -61,7 +65,7 @@ function ChatOmnichannelVisual() {
 
       {/* Main Chat Simulation Window */}
       <div className="bg-slate-50/80 rounded-2xl border border-slate-200 p-3 sm:p-4 space-y-3">
-        {/* Customer Header */}
+        {/* Customer Header + Interactive Reset Button */}
         <div className="flex items-center justify-between pb-2 border-b border-slate-200/70">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center shadow-xs">
@@ -77,23 +81,36 @@ function ChatOmnichannelVisual() {
               <span className="text-[10px] text-slate-400 block">WhatsApp · 0812-3456-xxxx</span>
             </div>
           </div>
-          <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
-            Online 24/7
-          </span>
+
+          <div className="flex items-center gap-2">
+            {chatStep !== "initial" && (
+              <button
+                onClick={() => setChatStep("initial")}
+                className="text-[10px] font-bold text-slate-500 hover:text-blue-600 bg-white hover:bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-md transition-colors flex items-center gap-1 cursor-pointer"
+                title="Reset simulasi chat"
+              >
+                <RotateCcw className="w-2.5 h-2.5" />
+                <span>Reset Chat</span>
+              </button>
+            )}
+            <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
+              Online 24/7
+            </span>
+          </div>
         </div>
 
         {/* Chat Thread */}
-        <div className="space-y-2.5 text-xs">
-          {/* Customer Question Bubble */}
-          <div className="flex flex-col items-start">
+        <div className="space-y-2.5 text-xs max-h-[340px] overflow-y-auto pr-1">
+          {/* Customer Message 1 */}
+          <div className="flex flex-col items-start animate-in fade-in duration-300">
             <div className="bg-white border border-slate-200 text-slate-800 p-3 rounded-2xl rounded-tl-xs max-w-[88%] shadow-2xs leading-relaxed">
               Halo min, mau tanya paket Brightening Serum ready gak ya? Harganya berapa dan bisa kirim hari ini?
               <span className="text-[9px] text-slate-400 block text-right mt-1">11:14</span>
             </div>
           </div>
 
-          {/* AI Instant Reply Bubble */}
-          <div className="flex flex-col items-end">
+          {/* AI Message 1 */}
+          <div className="flex flex-col items-end animate-in fade-in duration-300">
             <div className="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-xs max-w-[92%] shadow-md space-y-2">
               <div className="flex items-center justify-between text-[10px] border-b border-blue-400/40 pb-1 text-blue-100">
                 <span className="font-semibold flex items-center gap-1">
@@ -108,17 +125,166 @@ function ChatOmnichannelVisual() {
               <p className="text-[11px] leading-relaxed text-blue-50">
                 Pesanan sebelum jam 15.00 langsung kami kirim hari ini via JNE / SiCepat. Mau sekalian dibikinkan pesanannya kak?
               </p>
-              {/* Action Buttons in Chat */}
-              <div className="flex flex-wrap gap-1.5 pt-1">
-                <span className="px-2.5 py-1 rounded-lg bg-white text-blue-700 font-bold text-[10px] shadow-xs cursor-pointer hover:bg-blue-50 transition-colors">
-                  Beli Sekarang (Rp 165.000)
-                </span>
-                <span className="px-2.5 py-1 rounded-lg bg-blue-700 text-white font-medium text-[10px] hover:bg-blue-800 transition-colors cursor-pointer">
-                  Tanya Dokter / Admin
-                </span>
-              </div>
+
+              {/* Action Buttons: Clickable to simulate live demo! */}
+              {chatStep === "initial" && (
+                <div className="pt-1 space-y-1.5">
+                  <div className="flex items-center gap-1 text-[9px] text-blue-200 font-medium">
+                    <span>💡 Klik salah satu opsi untuk mencoba simulasi demo:</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    <button
+                      onClick={() => setChatStep("buy")}
+                      className="px-2.5 py-1 rounded-lg bg-white text-blue-700 font-bold text-[10px] shadow-xs cursor-pointer hover:bg-blue-50 hover:scale-105 active:scale-95 transition-all flex items-center gap-1"
+                    >
+                      <span>Beli Sekarang (Rp 165.000)</span>
+                      <span className="text-blue-500 font-bold">👉</span>
+                    </button>
+                    <button
+                      onClick={() => setChatStep("doctor")}
+                      className="px-2.5 py-1 rounded-lg bg-blue-700 text-white font-medium text-[10px] hover:bg-blue-800 hover:scale-105 active:scale-95 transition-all cursor-pointer flex items-center gap-1 border border-blue-400/40"
+                    >
+                      <span>Tanya Dokter / Admin</span>
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
+
+          {/* SIMULATION FLOW 1: BUY NOW & QRIS PAYMENT */}
+          {chatStep === "buy" && (
+            <>
+              {/* Customer Follow-up */}
+              <div className="flex flex-col items-start animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <div className="bg-white border border-slate-200 text-slate-800 p-2.5 rounded-2xl rounded-tl-xs max-w-[88%] shadow-2xs leading-relaxed">
+                  Boleh min, saya mau beli sekarang via QRIS ya. Tolong kirim ke Jakarta Barat.
+                  <span className="text-[9px] text-slate-400 block text-right mt-0.5">11:14</span>
+                </div>
+              </div>
+
+              {/* AI Auto Invoice & QRIS Checkout */}
+              <div className="flex flex-col items-end animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <div className="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-xs max-w-[92%] shadow-md space-y-2">
+                  <div className="flex items-center justify-between text-[10px] border-b border-blue-400/40 pb-1 text-blue-100">
+                    <span className="font-semibold flex items-center gap-1">
+                      <Bot className="w-3 h-3 text-blue-200" />
+                      Otomatisasi Kasir Chat
+                    </span>
+                    <span className="text-emerald-300 font-bold">Respon: 1 detik</span>
+                  </div>
+                  <p className="text-[11px] text-blue-50">
+                    Pesanan <strong>#ORD-2026-889</strong> siap!
+                    <br />• 1x Brightening Serum (Rp 165.000)
+                    <br />• Ongkir: Gratis (Promo Jakarta Barat)
+                    <br /><strong>Total Tagihan: Rp 165.000</strong>
+                  </p>
+                  <div className="p-2.5 rounded-xl bg-white text-slate-900 shadow-sm space-y-1.5">
+                    <div className="flex items-center justify-between text-[10px]">
+                      <span className="font-bold flex items-center gap-1 text-slate-800">
+                        <QrCode className="w-3.5 h-3.5 text-blue-600" />
+                        QRIS Dinamis Otomatis
+                      </span>
+                      <span className="text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.2 rounded">
+                        Rp 165.000
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => setChatStep("paid")}
+                      className="w-full py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[10px] transition-all cursor-pointer flex items-center justify-center gap-1 shadow-xs hover:scale-[1.02] active:scale-[0.98]"
+                    >
+                      <CheckCircle2 className="w-3 h-3" />
+                      <span>Klik untuk Simulasi Bayar QRIS Instan</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* SIMULATION FLOW 1B: QRIS PAID CONFIRMATION */}
+          {chatStep === "paid" && (
+            <>
+              {/* Payment Verified Alert Bubble */}
+              <div className="flex justify-center animate-in zoom-in-95 duration-300">
+                <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold border border-emerald-300 flex items-center gap-1.5 shadow-2xs">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                  Pembayaran QRIS Rp 165.000 Terverifikasi Otomatis
+                </span>
+              </div>
+
+              {/* AI Auto Receipt & Shipping Confirmation */}
+              <div className="flex flex-col items-end animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <div className="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-xs max-w-[92%] shadow-md space-y-2">
+                  <div className="flex items-center justify-between text-[10px] border-b border-blue-400/40 pb-1 text-blue-100">
+                    <span className="font-semibold flex items-center gap-1">
+                      <Bot className="w-3 h-3 text-blue-200" />
+                      Resi Otomatis Terbit
+                    </span>
+                    <span className="text-emerald-300 font-bold">Lunas</span>
+                  </div>
+                  <p className="text-[11px] text-blue-50 leading-relaxed">
+                    Terima kasih Kak Siti! Pembayaran telah kami terima. Paket sudah masuk antrean packing dan resi JNE (<strong>#JNE-8829103</strong>) akan terbit otomatis sore ini.
+                  </p>
+                  <div className="pt-1 flex items-center gap-2">
+                    <button
+                      onClick={() => setChatStep("initial")}
+                      className="px-2.5 py-1 rounded-lg bg-white text-blue-700 font-bold text-[10px] hover:bg-blue-50 transition-colors flex items-center gap-1 cursor-pointer"
+                    >
+                      <RotateCcw className="w-3 h-3" />
+                      <span>Ulangi Simulasi Demo</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* SIMULATION FLOW 2: SMART HUMAN HANDOFF TO DOCTOR / ADMIN */}
+          {chatStep === "doctor" && (
+            <>
+              {/* Customer Consultation Request */}
+              <div className="flex flex-col items-start animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <div className="bg-white border border-slate-200 text-slate-800 p-2.5 rounded-2xl rounded-tl-xs max-w-[88%] shadow-2xs leading-relaxed">
+                  Min, kulit saya agak sensitif dan berjerawat ringan, apakah serum ini aman dipakai? Mau konsultasi dulu ya.
+                  <span className="text-[9px] text-slate-400 block text-right mt-0.5">11:15</span>
+                </div>
+              </div>
+
+              {/* System Handoff Alert */}
+              <div className="flex justify-center animate-in zoom-in-95 duration-300">
+                <span className="px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-[10px] font-bold border border-purple-200 flex items-center gap-1.5 shadow-2xs">
+                  <UserCheck className="w-3.5 h-3.5 text-purple-600" />
+                  Smart Human Handoff: Chat dialihkan ke Konsultan Medis (dr. Nadia)
+                </span>
+              </div>
+
+              {/* Doctor / Human Agent Reply */}
+              <div className="flex flex-col items-end animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <div className="bg-purple-700 text-white p-3 rounded-2xl rounded-tr-xs max-w-[92%] shadow-md space-y-2">
+                  <div className="flex items-center justify-between text-[10px] border-b border-purple-400/40 pb-1 text-purple-100">
+                    <span className="font-semibold flex items-center gap-1">
+                      <Users className="w-3 h-3 text-purple-200" />
+                      dr. Nadia · Konsultan Kulit
+                    </span>
+                    <span className="text-emerald-300 font-bold">Online</span>
+                  </div>
+                  <p className="text-[11px] text-purple-50 leading-relaxed">
+                    Halo Kak Siti, saya dr. Nadia. Serum ini bebas alkohol dan hypoallergenic sehingga aman untuk jerawat ringan. Boleh saya tahu produk toner yang sedang kakak pakai saat ini?
+                  </p>
+                  <div className="pt-1 flex items-center gap-2">
+                    <button
+                      onClick={() => setChatStep("initial")}
+                      className="px-2.5 py-1 rounded-lg bg-white text-purple-900 font-bold text-[10px] hover:bg-purple-50 transition-colors flex items-center gap-1 cursor-pointer"
+                    >
+                      <RotateCcw className="w-3 h-3" />
+                      <span>Ulangi Simulasi Demo</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
@@ -609,6 +775,17 @@ export function ProductsSection() {
                 </button>
               );
             })}
+
+            {/* Direct arrow link matching user screenshot: Lihat semua fitur → */}
+            <div className="pt-3 px-1">
+              <Link
+                href="/fitur"
+                className="inline-flex items-center gap-2 text-base sm:text-lg font-bold text-blue-600 hover:text-blue-700 group transition-all"
+              >
+                <span>Lihat semua fitur</span>
+                <span className="text-lg font-bold group-hover:translate-x-1.5 transition-transform">→</span>
+              </Link>
+            </div>
           </div>
 
           {/* ================================================================= */}
@@ -643,42 +820,6 @@ export function ProductsSection() {
             </div>
           </div>
 
-        </div>
-
-        {/* =================================================================== */}
-        {/* JELAJAHI SEMUA FITUR BANNER (CALLOUT TO /fitur)                    */}
-        {/* =================================================================== */}
-        <div className="pt-4 border-t border-slate-200/80">
-          <div className="relative rounded-3xl bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 p-8 sm:p-12 text-white shadow-2xl border border-blue-900/50 overflow-hidden">
-            {/* Ambient glows */}
-            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-80 h-80 rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-80 h-80 rounded-full bg-indigo-500/20 blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="space-y-3 text-center lg:text-left max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold">
-                  <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-                  <span>12+ MODUL LENGKAP TERINTEGRASI</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
-                  Ingin melihat rincian seluruh modul &amp; fitur Intiora?
-                </h3>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Dari auto routing chat, kualifikasi prospek otomatis, tiket komplain, hingga kalkulator ongkir kurir dan kasir QRIS — semua kami jelaskan secara rinci, jelas, singkat, dan padat.
-                </p>
-              </div>
-
-              <div className="shrink-0 w-full sm:w-auto">
-                <Link
-                  href="/fitur"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 transition-all group"
-                >
-                  <span>Lihat Seluruh Fitur Selengkapnya</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
 
       </Container>
