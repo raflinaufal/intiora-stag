@@ -42,11 +42,11 @@ export function TrustSection() {
               </h2>
             </div>
 
-            {/* Metrics Row - Mobile-first grid to prevent overflow */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-8 pt-2">
+            {/* Metrics Row - Adjusted font size and spacing to prevent collision with divider */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 pt-2 items-start">
               {/* Metric 1 */}
-              <div className="space-y-1">
-                <span className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight block">
+              <div className="space-y-1 pr-2">
+                <span className="text-base sm:text-lg lg:text-xl xl:text-2xl font-black text-slate-900 tracking-tight block whitespace-nowrap">
                   10.000.000.000+
                 </span>
                 <span className="text-xs sm:text-sm text-slate-500 font-medium block leading-snug">
@@ -55,8 +55,8 @@ export function TrustSection() {
               </div>
 
               {/* Metric 2 */}
-              <div className="space-y-1 border-l border-slate-200 pl-4 sm:pl-8">
-                <span className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight block">
+              <div className="space-y-1 border-l border-slate-200 pl-3 sm:pl-6">
+                <span className="text-base sm:text-lg lg:text-xl xl:text-2xl font-black text-slate-900 tracking-tight block whitespace-nowrap">
                   2.000.000+
                 </span>
                 <span className="text-xs sm:text-sm text-slate-500 font-medium block leading-snug">
