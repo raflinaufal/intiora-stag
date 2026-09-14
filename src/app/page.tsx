@@ -1,9 +1,8 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { TrustSection } from "@/components/sections/trust-section";
 import { ProductsSection } from "@/components/sections/products-section";
-import { StatsSection } from "@/components/sections/stats-section";
-import { HowItWorksSection } from "@/components/sections/how-it-works-section";
 import { SolutionsSection } from "@/components/sections/solutions-section";
+import { HowItWorksSection } from "@/components/sections/how-it-works-section";
 import { IntegrationsSection } from "@/components/sections/integrations-section";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
@@ -16,9 +15,8 @@ export default function HomePage() {
       <HeroSection />
       <TrustSection />
       <ProductsSection />
-      <StatsSection />
-      <HowItWorksSection />
       <SolutionsSection />
+      <HowItWorksSection />
       <IntegrationsSection />
       <PricingSection />
       <TestimonialsSection />
