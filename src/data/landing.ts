@@ -84,15 +84,15 @@ export const productsData = {
       name: "Chatbot AI & WhatsApp Omnichannel",
       headline: "Balas pesan WhatsApp, Instagram & Web 24/7 dalam satu inbox resmi.",
       description:
-        "Terhubung langsung ke WhatsApp Business API resmi Meta dan Instagram DM. Dilengkapi asisten AI yang membalas chat instan dalam 2 detik serta WhatsApp Call AI yang merangkum percakapan telepon otomatis.",
+        "Terhubung langsung ke WhatsApp Business API resmi Meta, Instagram DM, dan Website Live Chat. Dilengkapi asisten AI yang membalas chat instan dalam 2 detik secara konsisten 24 jam nonstop.",
       badges: [
         "WhatsApp Business API Resmi",
-        "WhatsApp Call AI",
+        "Respon Cepat < 2 Detik",
         "1 Layar Semua Channel",
       ],
       subFeatures: [
         "Chatbot AI membalas dalam 2 detik dengan bahasa ramah santun",
-        "WhatsApp Call AI otomatis mencatat poin penting telepon pelanggan",
+        "Pesan masuk terdistribusi otomatis ke tim tanpa berebutan",
         "Jalur resmi Meta aman dari risiko pemblokiran nomor WhatsApp",
       ],
       ctaLabel: "Lihat Demo Chatbot AI",
@@ -184,10 +184,10 @@ export const productsData = {
       category: "Chat",
     },
     {
-      id: "call-ai",
-      title: "WhatsApp Call AI",
+      id: "routing-chat",
+      title: "Auto Routing Chat",
       description:
-        "Rangkum percakapan telepon otomatis menjadi catatan poin penting dan follow-up berikutnya.",
+        "Bagi pesan masuk secara otomatis dan merata ke tim customer service tanpa berebutan.",
       category: "Chat",
     },
     {
@@ -781,7 +781,7 @@ export const fiturMegaMenu = {
         { name: "Chatbot AI WhatsApp", icon: "MessageSquare", href: "#produk" },
         { name: "WhatsApp Business API", icon: "CheckCircle2", href: "#produk" },
         { name: "Aplikasi Omnichannel", icon: "Layers", href: "#produk" },
-        { name: "WhatsApp Call AI", icon: "PhoneCall", href: "#produk" },
+        { name: "Auto Routing Chat", icon: "GitBranch", href: "#produk" },
       ],
     },
     {
@@ -828,9 +828,9 @@ export const fiturMegaMenu = {
   ],
   featured: {
     tag: "UNGGULAN",
-    title: "WhatsApp Call AI",
+    title: "Chatbot AI WhatsApp Resmi",
     description:
-      "Setiap telepon dirangkum AI, poin penting dan langkah berikutnya, otomatis.",
+      "Balas chat pelanggan otomatis 24/7 dengan WhatsApp Business API resmi Meta, cepat dan anti-blokir.",
     linkText: "Jelajahi fitur →",
     href: "#produk",
     trustText: "Dipercaya 3.000+ bisnis di Indonesia",

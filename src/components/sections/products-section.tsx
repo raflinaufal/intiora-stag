@@ -20,7 +20,6 @@ import {
   QrCode,
   ShieldCheck,
   Zap,
-  PhoneCall,
   Cpu,
   Layers,
   CheckSquare,
@@ -29,11 +28,12 @@ import {
   Radio,
   Truck,
   ShoppingCart,
+  GitBranch,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // ============================================================================
-// 1. VISUAL MOCKUP 1: CHATBOT AI & WHATSAPP OMNICHANNEL (WITH CALL AI)
+// 1. VISUAL MOCKUP 1: CHATBOT AI & WHATSAPP OMNICHANNEL
 // ============================================================================
 function ChatOmnichannelVisual() {
   return (
@@ -53,7 +53,7 @@ function ChatOmnichannelVisual() {
             Official Meta
           </span>
           <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-            WhatsApp Call AI
+            Respon &lt; 2 Detik
           </span>
         </div>
       </div>
@@ -121,26 +121,26 @@ function ChatOmnichannelVisual() {
         </div>
       </div>
 
-      {/* WhatsApp Call AI Banner */}
+      {/* Respon Cepat 24 Jam Banner */}
       <div className="flex items-center justify-between p-3 rounded-xl bg-blue-50/70 border border-blue-100 text-xs">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0">
-            <PhoneCall className="w-4 h-4" />
+            <Zap className="w-4 h-4" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-slate-900">WhatsApp Call AI Terintegrasi</span>
-              <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-blue-200 text-blue-800 font-semibold">
-                Fitur Unggulan
+              <span className="text-xs font-bold text-slate-900">Respon Otomatis 24 Jam Nonstop</span>
+              <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-emerald-100 text-emerald-800 font-semibold">
+                Online Terus
               </span>
             </div>
             <span className="text-[10px] text-slate-600 block mt-0.5">
-              Setiap telepon otomatis dirangkum AI menjadi catatan poin penting dan aksi tim berikutnya.
+              Pesan pelanggan langsung terbalas seketika, tidak ada chat yang terlewat atau terlambat dilayani.
             </span>
           </div>
         </div>
-        <span className="text-[10px] font-bold text-blue-700 bg-white px-2.5 py-1 rounded-md border border-blue-200 shrink-0">
-          Rangkuman Siap
+        <span className="text-[10px] font-bold text-emerald-700 bg-white px-2.5 py-1 rounded-md border border-emerald-200 shrink-0">
+          98% Pelanggan Puas
         </span>
       </div>
     </div>
@@ -441,8 +441,8 @@ export function ProductsSection() {
     switch (id) {
       case "chatbot-wa":
         return <Bot className="w-5 h-5 text-emerald-600" />;
-      case "call-ai":
-        return <PhoneCall className="w-5 h-5 text-blue-600" />;
+      case "routing-chat":
+        return <GitBranch className="w-5 h-5 text-blue-600" />;
       case "omnichannel":
         return <Layers className="w-5 h-5 text-indigo-600" />;
       case "wa-api":
