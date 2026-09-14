@@ -12,26 +12,30 @@ import {
   Bot,
   Users,
   ShoppingBag,
-  Package,
   Send,
-  BellRing,
   BarChart3,
   Receipt,
-  UserCheck,
-  Globe2,
   Sparkles,
   CheckCircle2,
   QrCode,
-  Store,
   ShieldCheck,
   Zap,
+  PhoneCall,
+  Cpu,
+  Layers,
+  CheckSquare,
+  Kanban,
+  LifeBuoy,
+  Radio,
+  Truck,
+  ShoppingCart,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // ============================================================================
-// 1. VISUAL MOCKUP 1: SEMUA CHAT & ASISTEN 24 JAM
+// 1. VISUAL MOCKUP 1: CHATBOT AI & WHATSAPP OMNICHANNEL (WITH CALL AI)
 // ============================================================================
-function ChatAssistantVisual() {
+function ChatOmnichannelVisual() {
   return (
     <div className="w-full flex flex-col gap-3 p-3 sm:p-5 select-none">
       {/* Top Status & Channel Indicator */}
@@ -41,14 +45,15 @@ function ChatAssistantVisual() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
           </span>
-          <span className="text-xs font-bold text-slate-800">Inbox Chat Pelanggan (Aktif)</span>
+          <span className="text-xs font-bold text-slate-800">Inbox Resmi WhatsApp Business API</span>
         </div>
         <div className="flex items-center gap-1.5 text-[11px] font-semibold">
-          <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-            WhatsApp
+          <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
+            <Check className="w-3 h-3 text-emerald-600" />
+            Official Meta
           </span>
-          <span className="px-2.5 py-0.5 rounded-full bg-pink-50 text-pink-700 border border-pink-200">
-            Instagram
+          <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+            WhatsApp Call AI
           </span>
         </div>
       </div>
@@ -65,14 +70,14 @@ function ChatAssistantVisual() {
               <div className="flex items-center gap-1.5">
                 <span className="text-xs font-bold text-slate-900">Siti Rahma</span>
                 <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-blue-100 text-blue-800 font-medium">
-                  Calon Pembeli
+                  Pelanggan Baru
                 </span>
               </div>
               <span className="text-[10px] text-slate-400 block">WhatsApp · 0812-3456-xxxx</span>
             </div>
           </div>
           <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
-            Online
+            Online 24/7
           </span>
         </div>
 
@@ -92,7 +97,7 @@ function ChatAssistantVisual() {
               <div className="flex items-center justify-between text-[10px] border-b border-blue-400/40 pb-1 text-blue-100">
                 <span className="font-semibold flex items-center gap-1">
                   <Bot className="w-3 h-3 text-blue-200" />
-                  Dijawab Asisten Intiora
+                  Chatbot AI WhatsApp
                 </span>
                 <span className="text-emerald-300 font-bold">Respon: 2 detik</span>
               </div>
@@ -116,23 +121,26 @@ function ChatAssistantVisual() {
         </div>
       </div>
 
-      {/* Bottom Result Pill */}
-      <div className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 text-xs">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
-            <Zap className="w-4 h-4" />
+      {/* WhatsApp Call AI Banner */}
+      <div className="flex items-center justify-between p-3 rounded-xl bg-blue-50/70 border border-blue-100 text-xs">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0">
+            <PhoneCall className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-[11px] font-bold text-slate-800 block leading-tight">
-              Pelanggan Tak Perlu Nunggu
-            </span>
-            <span className="text-[10px] text-slate-500">
-              Admin tidur nyenyak, pesanan tetap masuk 24 jam.
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-bold text-slate-900">WhatsApp Call AI Terintegrasi</span>
+              <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-blue-200 text-blue-800 font-semibold">
+                Fitur Unggulan
+              </span>
+            </div>
+            <span className="text-[10px] text-slate-600 block mt-0.5">
+              Setiap telepon otomatis dirangkum AI menjadi catatan poin penting dan aksi tim berikutnya.
             </span>
           </div>
         </div>
-        <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md border border-emerald-100">
-          98% Pelanggan Puas
+        <span className="text-[10px] font-bold text-blue-700 bg-white px-2.5 py-1 rounded-md border border-blue-200 shrink-0">
+          Rangkuman Siap
         </span>
       </div>
     </div>
@@ -140,24 +148,168 @@ function ChatAssistantVisual() {
 }
 
 // ============================================================================
-// 2. VISUAL MOCKUP 2: DATABASE KONTAK & PROMO WHATSAPP
+// 2. VISUAL MOCKUP 2: AI AGENT CERDAS & MANDIRI (KNOWLEDGE BASE & HANDOFF)
 // ============================================================================
-function CustomerPromoVisual() {
+function AiAgentVisual() {
+  return (
+    <div className="w-full flex flex-col gap-3 p-3 sm:p-5 select-none">
+      {/* Knowledge Base Sync Card */}
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-3">
+        <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center">
+              <Sparkles className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-900 block leading-tight">
+                Knowledge Base &amp; Data Bisnis Anda
+              </span>
+              <span className="text-[10px] text-slate-500">
+                AI otomatis belajar dari dokumen katalog &amp; SOP toko Anda
+              </span>
+            </div>
+          </div>
+          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+            100% Tersinkron
+          </span>
+        </div>
+
+        <div className="grid grid-cols-2 gap-2 text-xs">
+          <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <span className="text-[10px] font-bold text-slate-500 block">Dokumen Terhubung</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-bold text-slate-800 truncate">Katalog_Harga_2026.pdf</span>
+            </div>
+            <span className="text-[10px] text-emerald-600 font-semibold block">✓ 420 Produk Dipahami</span>
+          </div>
+
+          <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <span className="text-[10px] font-bold text-slate-500 block">Kualifikasi Prospek (Leads)</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-bold text-blue-600">Hot Lead (B2B Bulk)</span>
+            </div>
+            <span className="text-[10px] text-slate-500 block">Budget: Rp 15 Juta · Mau Order</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Smart Human Handoff Card */}
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-2.5">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Bot className="w-4 h-4 text-blue-600" />
+            <span className="text-xs font-bold text-slate-900">Smart Human Handoff ke Tim Sales</span>
+          </div>
+          <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
+            Oper Otomatis
+          </span>
+        </div>
+
+        <div className="p-3 rounded-xl bg-blue-50/60 border border-blue-100 text-xs space-y-1.5">
+          <div className="flex items-center justify-between text-[10px]">
+            <span className="font-bold text-blue-900">Rangkuman AI untuk Admin:</span>
+            <span className="text-slate-500">Ditugaskan ke: Rian (Sales B2B)</span>
+          </div>
+          <p className="text-[11px] text-slate-700 leading-snug">
+            &ldquo;Calon pembeli mencari 100 karton untuk cabang baru di Surabaya. Pertanyaan dasar sudah dijawab AI, tinggal kirim penawaran harga resmi (P/O).&rdquo;
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
+// 3. VISUAL MOCKUP 3: APLIKASI CRM & PIPELINE PENJUALAN
+// ============================================================================
+function CrmPipelineVisual() {
+  return (
+    <div className="w-full flex flex-col gap-3 p-3 sm:p-5 select-none">
+      {/* Customer 360 Card */}
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-3">
+        <div className="flex items-center justify-between pb-2.5 border-b border-slate-100">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-blue-600 text-white font-bold text-sm flex items-center justify-center">
+              BP
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-slate-900">Budi Pratama</span>
+                <span className="px-2 py-0.2 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[9px]">
+                  VIP Customer
+                </span>
+              </div>
+              <span className="text-[11px] text-slate-500">0812-9842-xxxx · PT Surya Nusantara</span>
+            </div>
+          </div>
+          <div className="text-right">
+            <span className="text-[10px] text-slate-400 block">Total Belanja (CLV)</span>
+            <span className="text-xs sm:text-sm font-black text-slate-900">Rp 48.500.000</span>
+          </div>
+        </div>
+
+        {/* Visual Sales Pipeline Mini Board */}
+        <div className="space-y-1.5">
+          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+            Pipeline Penjualan Tim Sales:
+          </span>
+          <div className="grid grid-cols-4 gap-1.5 text-center text-xs">
+            <div className="p-2 rounded-xl bg-slate-50 border border-slate-200">
+              <span className="text-[9px] text-slate-500 block">Chat Baru</span>
+              <span className="font-extrabold text-slate-900 text-xs">18 Leads</span>
+            </div>
+            <div className="p-2 rounded-xl bg-blue-50 border border-blue-200 text-blue-800">
+              <span className="text-[9px] text-blue-600 block">Kualifikasi</span>
+              <span className="font-extrabold text-blue-700 text-xs">12 Leads</span>
+            </div>
+            <div className="p-2 rounded-xl bg-amber-50 border border-amber-200 text-amber-800">
+              <span className="text-[9px] text-amber-600 block">Menunggu Bayar</span>
+              <span className="font-extrabold text-amber-700 text-xs">8 Pesanan</span>
+            </div>
+            <div className="p-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800">
+              <span className="text-[9px] text-emerald-600 block">Closing / Lunas</span>
+              <span className="font-extrabold text-emerald-700 text-xs">45 Closing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Complaint Ticket Badge */}
+      <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+        <div className="flex items-center gap-2">
+          <LifeBuoy className="w-4 h-4 text-purple-600" />
+          <span className="text-[11px] font-bold text-slate-800">
+            Manajemen Komplain Terorganisir:
+          </span>
+          <span className="text-[10px] text-slate-500">Tiket tidak tercecer, SLA respon 100% terjaga.</span>
+        </div>
+        <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+          SLA 100%
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
+// 4. VISUAL MOCKUP 4: WA BLAST & BROADCAST RESMI
+// ============================================================================
+function WaBlastVisual() {
   return (
     <div className="w-full flex flex-col gap-3 p-3 sm:p-5 select-none">
       {/* Broadcast Campaign Card */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-3">
         <div className="flex items-center justify-between pb-2.5 border-b border-slate-100">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-              <Send className="w-3.5 h-3.5" />
+            <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+              <Send className="w-4 h-4" />
             </div>
             <div>
               <span className="text-xs font-bold text-slate-900 block leading-tight">
-                Broadcast WhatsApp: Promo Gajian 25%
+                Broadcast WhatsApp Resmi: Promo Gajian 25%
               </span>
               <span className="text-[10px] text-slate-500">
-                Target: 1.250 Pelanggan Setia yang Pernah Belanja
+                Segmentasi: 1.250 Pelanggan yang Pernah Belanja Lebih dari 1x
               </span>
             </div>
           </div>
@@ -175,7 +327,7 @@ function CustomerPromoVisual() {
             &ldquo;Halo Kak Budi! Khusus pelanggan setia, nikmati <strong>Diskon 25%</strong> untuk semua produk favoritmu sampai besok malam. Pakai kode: <strong>GAJIANHEMAT</strong>.&rdquo;
           </p>
           <div className="inline-block px-3 py-1 rounded-md bg-white border border-emerald-300 text-emerald-700 font-bold text-[10px]">
-            [Klik untuk Ambil Diskon via Chat]
+            [Klik untuk Pesan Langsung via WhatsApp]
           </div>
         </div>
 
@@ -183,15 +335,15 @@ function CustomerPromoVisual() {
         <div className="grid grid-cols-4 gap-2 pt-1 text-center">
           <div className="p-2 rounded-xl bg-slate-50 border border-slate-100">
             <span className="text-[10px] text-slate-500 block">Pesan Terkirim</span>
-            <span className="text-sm font-extrabold text-slate-900">1.250</span>
+            <span className="text-xs sm:text-sm font-extrabold text-slate-900">1.250</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 border border-slate-100">
             <span className="text-[10px] text-slate-500 block">Dibaca</span>
-            <span className="text-sm font-extrabold text-emerald-600">95%</span>
+            <span className="text-xs sm:text-sm font-extrabold text-emerald-600">95%</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 border border-slate-100">
             <span className="text-[10px] text-slate-500 block">Langsung Beli</span>
-            <span className="text-sm font-extrabold text-blue-600">342 orang</span>
+            <span className="text-xs sm:text-sm font-extrabold text-blue-600">342 orang</span>
           </div>
           <div className="p-2 rounded-xl bg-blue-50/80 border border-blue-100 text-blue-900">
             <span className="text-[10px] text-blue-600 block font-semibold">Omset Masuk</span>
@@ -204,7 +356,7 @@ function CustomerPromoVisual() {
       <div className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 text-xs">
         <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
         <span className="text-[11px] text-slate-600">
-          Menggunakan <strong>WhatsApp Business Resmi</strong>: Aman dari blokir, pesan pasti sampai langsung ke kantong pembeli.
+          Menggunakan <strong>WhatsApp Cloud API Resmi Meta</strong>: Aman anti-banned nomor, pengiriman kilat terpercaya.
         </span>
       </div>
     </div>
@@ -212,17 +364,17 @@ function CustomerPromoVisual() {
 }
 
 // ============================================================================
-// 3. VISUAL MOCKUP 3: KATALOG, PESANAN & CEK STOK
+// 5. VISUAL MOCKUP 5: OTOMATISASI ORDER & KASIR CHAT (QRIS & ONGKIR)
 // ============================================================================
-function CatalogInventoryVisual() {
+function OrderAutomationVisual() {
   return (
     <div className="w-full flex flex-col gap-3 p-3 sm:p-5 select-none">
       {/* Live Order Card */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-3">
         <div className="flex items-center justify-between pb-2 border-b border-slate-100">
           <div className="flex items-center gap-2">
-            <ShoppingBag className="w-4 h-4 text-blue-600" />
-            <span className="text-xs font-bold text-slate-900">Pesanan Baru #INV-2026-089</span>
+            <ShoppingCart className="w-4 h-4 text-blue-600" />
+            <span className="text-xs font-bold text-slate-900">Pesanan Baru di Chat #ORD-2026-089</span>
           </div>
           <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
             Lunas via QRIS
@@ -232,137 +384,48 @@ function CatalogInventoryVisual() {
         {/* Ordered Item Details */}
         <div className="flex items-center justify-between text-xs bg-slate-50 p-2.5 rounded-xl border border-slate-100">
           <div>
-            <span className="font-bold text-slate-900 block">Kopi Arabika Gayo Premium (1 Kg)</span>
+            <span className="font-bold text-slate-900 text-xs block">Kopi Arabika Gayo Premium (1 Kg)</span>
             <span className="text-[10px] text-slate-500">Jumlah: 2 Bungkus · Diskon Promo: -10%</span>
           </div>
-          <span className="text-sm font-extrabold text-slate-900">Rp 270.000</span>
+          <span className="text-xs sm:text-sm font-extrabold text-slate-900">Rp 270.000</span>
+        </div>
+
+        {/* Cek Ongkir Kurir Row */}
+        <div className="flex items-center justify-between p-2.5 rounded-xl bg-blue-50/60 border border-blue-100 text-xs">
+          <div className="flex items-center gap-2">
+            <Truck className="w-4 h-4 text-blue-600" />
+            <div>
+              <span className="text-[11px] font-bold text-slate-900 block">Cek Ongkir Otomatis (JNE Regular)</span>
+              <span className="text-[10px] text-slate-500">Jakarta ➔ Surabaya (Estimasi 2 hari)</span>
+            </div>
+          </div>
+          <span className="text-xs font-bold text-blue-700">Rp 18.000</span>
         </div>
 
         {/* Action Row */}
         <div className="flex items-center justify-between pt-1 text-xs">
           <div className="flex items-center gap-1.5 text-[11px] text-slate-600">
             <QrCode className="w-3.5 h-3.5 text-blue-600" />
-            <span>Pembeli bayar via QRIS seketika</span>
+            <span>Pembeli bayar QRIS langsung terverifikasi</span>
           </div>
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 font-bold text-[10px]">
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-bold text-[10px]">
             <Receipt className="w-3 h-3" />
-            Nota PDF Terkirim
+            Nota PDF Otomatis
           </span>
         </div>
       </div>
 
-      {/* Real-time Stock Sync Card */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-2.5">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Store className="w-4 h-4 text-emerald-600" />
-            <span className="text-xs font-bold text-slate-900">Cek Sisa Stok Otomatis</span>
-          </div>
-          <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
-            Stok Pas &amp; Sinkron
+      {/* Auto Stock Deduction Info */}
+      <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+        <div className="flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+          <span className="text-[11px] text-slate-700">
+            Stok toko berkurang otomatis <strong>(-2 unit)</strong>, resi pengiriman siap dicetak.
           </span>
         </div>
-
-        <div className="grid grid-cols-2 gap-2 text-xs">
-          <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-            <div className="flex items-center justify-between text-[11px]">
-              <span className="text-slate-600">Toko / Gudang Utama</span>
-              <span className="font-extrabold text-slate-900">Sisa 148 pack</span>
-            </div>
-            <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-              <div className="bg-emerald-500 h-full w-3/4 rounded-full" />
-            </div>
-            <span className="text-[9px] text-slate-400 block pt-0.5">Berkurang 2 unit dari order ini</span>
-          </div>
-
-          <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-            <div className="flex items-center justify-between text-[11px]">
-              <span className="text-slate-600">Status Kurir</span>
-              <span className="font-bold text-blue-600">Siap Dikirim</span>
-            </div>
-            <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-              <div className="bg-blue-500 h-full w-full rounded-full" />
-            </div>
-            <span className="text-[9px] text-slate-400 block pt-0.5">Resi pengiriman otomatis siap</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ============================================================================
-// 4. VISUAL MOCKUP 4: OTOMASI KERJA & LAPORAN BISNIS
-// ============================================================================
-function WorkflowReportsVisual() {
-  return (
-    <div className="w-full flex flex-col gap-3 p-3 sm:p-5 select-none">
-      {/* Routine Automation Preview */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-3">
-        <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-          <div className="flex items-center gap-2">
-            <BellRing className="w-4 h-4 text-purple-600" />
-            <span className="text-xs font-bold text-slate-900">Otomasi: Follow-Up &amp; Pengingat Bayar</span>
-          </div>
-          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
-            Berjalan Otomatis
-          </span>
-        </div>
-
-        {/* 2 Step Plain Flow */}
-        <div className="space-y-2 text-xs">
-          <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-            <div className="w-6 h-6 rounded-md bg-purple-600 text-white flex items-center justify-center font-bold text-[10px]">
-              1
-            </div>
-            <div>
-              <span className="font-bold text-slate-900 block text-[11px] leading-tight">
-                Pembeli minta nomor rekening tapi belum transfer dalam 2 jam
-              </span>
-              <span className="text-[10px] text-slate-500">Sistem mendeteksi otomatis tanpa admin perlu mantau</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-100">
-            <div className="w-6 h-6 rounded-md bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px]">
-              2
-            </div>
-            <div>
-              <span className="font-bold text-slate-900 block text-[11px] leading-tight">
-                Kirim pengingat ramah ke WhatsApp pembeli
-              </span>
-              <span className="text-[10px] text-emerald-700 font-medium">
-                Hasil: 35% pembeli langsung transfer setelah diingatkan
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Team Performance & Boss Dashboard */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-2.5">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BarChart3 className="w-4 h-4 text-blue-600" />
-            <span className="text-xs font-bold text-slate-900">Ringkasan Tim &amp; Chat Hari Ini</span>
-          </div>
-          <span className="text-[10px] font-bold text-slate-500">Update Real-Time</span>
-        </div>
-
-        <div className="grid grid-cols-3 gap-2 text-center text-xs">
-          <div className="p-2 rounded-xl bg-slate-50 border border-slate-100">
-            <span className="text-[10px] text-slate-500 block">Total Chat Masuk</span>
-            <span className="text-sm font-black text-slate-900">458 chat</span>
-          </div>
-          <div className="p-2 rounded-xl bg-slate-50 border border-slate-100">
-            <span className="text-[10px] text-slate-500 block">Dibereskan AI</span>
-            <span className="text-sm font-black text-emerald-600">78% (357 chat)</span>
-          </div>
-          <div className="p-2 rounded-xl bg-slate-50 border border-slate-100">
-            <span className="text-[10px] text-slate-500 block">Kepuasan Pelanggan</span>
-            <span className="text-sm font-black text-amber-500">⭐ 4.9 / 5</span>
-          </div>
-        </div>
+        <span className="text-[10px] font-bold text-slate-700 bg-white px-2 py-0.5 rounded border border-slate-200">
+          Sisa: 148 pack
+        </span>
       </div>
     </div>
   );
@@ -376,30 +439,30 @@ export function ProductsSection() {
 
   const getFeatureIcon = (id: string) => {
     switch (id) {
+      case "chatbot-wa":
+        return <Bot className="w-5 h-5 text-emerald-600" />;
+      case "call-ai":
+        return <PhoneCall className="w-5 h-5 text-blue-600" />;
       case "omnichannel":
-        return <MessageSquare className="w-5 h-5 text-blue-600" />;
-      case "ai-support":
-        return <Bot className="w-5 h-5 text-indigo-600" />;
-      case "crm-360":
+        return <Layers className="w-5 h-5 text-indigo-600" />;
+      case "wa-api":
+        return <CheckCircle2 className="w-5 h-5 text-emerald-600" />;
+      case "ai-agent":
+        return <Sparkles className="w-5 h-5 text-purple-600" />;
+      case "crm":
+        return <Users className="w-5 h-5 text-blue-600" />;
+      case "pipeline":
+        return <Kanban className="w-5 h-5 text-amber-600" />;
+      case "komplain":
+        return <LifeBuoy className="w-5 h-5 text-rose-600" />;
+      case "blast":
+        return <Radio className="w-5 h-5 text-pink-600" />;
+      case "segmentasi":
         return <Users className="w-5 h-5 text-purple-600" />;
-      case "commerce":
-        return <ShoppingBag className="w-5 h-5 text-emerald-600" />;
-      case "inventory":
-        return <Package className="w-5 h-5 text-amber-600" />;
-      case "marketing":
-        return <Send className="w-5 h-5 text-pink-600" />;
-      case "workflow":
-        return <BellRing className="w-5 h-5 text-violet-600" />;
-      case "collaboration":
-        return <Users className="w-5 h-5 text-cyan-600" />;
-      case "reports":
-        return <BarChart3 className="w-5 h-5 text-teal-600" />;
-      case "finance":
-        return <Receipt className="w-5 h-5 text-emerald-600" />;
-      case "hr":
-        return <UserCheck className="w-5 h-5 text-orange-600" />;
-      case "developer":
-        return <Globe2 className="w-5 h-5 text-blue-600" />;
+      case "order":
+        return <ShoppingCart className="w-5 h-5 text-emerald-600" />;
+      case "ongkir-qr":
+        return <QrCode className="w-5 h-5 text-blue-600" />;
       default:
         return <Sparkles className="w-5 h-5 text-blue-600" />;
     }
@@ -407,14 +470,16 @@ export function ProductsSection() {
 
   const getItemIcon = (id: string) => {
     switch (id) {
-      case "ai-support":
-        return <Bot className="w-4 h-4 text-blue-600" />;
-      case "crm-marketing":
-        return <Send className="w-4 h-4 text-purple-600" />;
-      case "commerce-inventory":
-        return <ShoppingBag className="w-4 h-4 text-emerald-600" />;
-      case "workflow-developer":
-        return <BarChart3 className="w-4 h-4 text-amber-600" />;
+      case "chat-omnichannel":
+        return <MessageSquare className="w-4 h-4 text-emerald-600" />;
+      case "ai-agent":
+        return <Sparkles className="w-4 h-4 text-purple-600" />;
+      case "crm-pipeline":
+        return <Users className="w-4 h-4 text-blue-600" />;
+      case "wa-blast":
+        return <Send className="w-4 h-4 text-pink-600" />;
+      case "order-automation":
+        return <ShoppingCart className="w-4 h-4 text-amber-600" />;
       default:
         return <Sparkles className="w-4 h-4 text-blue-600" />;
     }
@@ -428,7 +493,7 @@ export function ProductsSection() {
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold mb-3">
               <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              <span>SEMUA KEBUTUHAN JUALAN ANDA</span>
+              <span>PLATFORM LENGKAP INTIORA</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-slate-900 tracking-tight leading-tight">
               {productsData.heading}
@@ -445,9 +510,9 @@ export function ProductsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch mb-20">
           
           {/* ================================================================= */}
-          {/* LEFT COLUMN: 4 PRODUCT SECTIONS (~45%)                            */}
+          {/* LEFT COLUMN: 5 CORE FEATURES ACCORDION (~45%)                     */}
           {/* ================================================================= */}
-          <div className="lg:col-span-5 flex flex-col gap-3">
+          <div className="lg:col-span-5 flex flex-col gap-2.5">
             {productsData.items.map((item) => {
               const isActive = item.id === activeItemId;
 
@@ -529,17 +594,17 @@ export function ProductsSection() {
                 <button
                   key={item.id}
                   onClick={() => setActiveItemId(item.id)}
-                  className="w-full flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 text-left hover:border-slate-300 hover:shadow-xs transition-all cursor-pointer group"
+                  className="w-full flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 text-left hover:border-slate-300 hover:shadow-xs transition-all cursor-pointer group"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
                       {getItemIcon(item.id)}
                     </div>
-                    <span className="text-sm sm:text-base font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                    <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
                       {item.name}
                     </span>
                   </div>
-                  <ChevronDown className="w-5 h-5 text-slate-400 group-hover:text-slate-600 transition-colors" />
+                  <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-slate-600 transition-colors" />
                 </button>
               );
             })}
@@ -568,10 +633,11 @@ export function ProductsSection() {
 
               {/* Dynamic Content Panel */}
               <div className="flex-1 bg-slate-50/40 p-1 sm:p-2 flex items-center justify-center">
-                {activeItemId === "ai-support" && <ChatAssistantVisual />}
-                {activeItemId === "crm-marketing" && <CustomerPromoVisual />}
-                {activeItemId === "commerce-inventory" && <CatalogInventoryVisual />}
-                {activeItemId === "workflow-developer" && <WorkflowReportsVisual />}
+                {activeItemId === "chat-omnichannel" && <ChatOmnichannelVisual />}
+                {activeItemId === "ai-agent" && <AiAgentVisual />}
+                {activeItemId === "crm-pipeline" && <CrmPipelineVisual />}
+                {activeItemId === "wa-blast" && <WaBlastVisual />}
+                {activeItemId === "order-automation" && <OrderAutomationVisual />}
               </div>
             </div>
           </div>
@@ -584,10 +650,10 @@ export function ProductsSection() {
         <div className="pt-12 border-t border-slate-200/80">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              12 Kemampuan Lengkap Intiora untuk Toko &amp; Bisnis Anda
+              12 Modul Terintegrasi dalam Ekosistem Intiora
             </h3>
             <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-              Semua fitur saling terhubung otomatis, sehingga Anda dan tim tidak perlu lagi repot catat manual atau pakai banyak aplikasi terpisah.
+              Semua modul fitur saling terhubung otomatis dalam satu database terpusat, mempermudah tim sales, CS, dan operasional Anda.
             </p>
           </div>
 
