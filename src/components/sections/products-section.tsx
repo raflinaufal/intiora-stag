@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { productsData } from "@/data/landing";
 import {
@@ -577,13 +578,13 @@ export function ProductsSection() {
 
                     {/* CTA Link */}
                     <div className="pt-2">
-                      <a
+                      <Link
                         href={item.ctaHref}
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 hover:underline group"
+                        className="inline-flex items-center gap-2 text-base font-bold text-blue-600 hover:text-blue-700 group transition-all"
                       >
                         <span>{item.ctaLabel}</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </a>
+                        <span className="text-base font-bold group-hover:translate-x-1.5 transition-transform">→</span>
+                      </Link>
                     </div>
                   </div>
                 );
@@ -645,40 +646,38 @@ export function ProductsSection() {
         </div>
 
         {/* =================================================================== */}
-        {/* 12 FITUR LENGKAP BISNIS (GRID DETAIL)                              */}
+        {/* JELAJAHI SEMUA FITUR BANNER (CALLOUT TO /fitur)                    */}
         {/* =================================================================== */}
-        <div className="pt-12 border-t border-slate-200/80">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              12 Modul Terintegrasi dalam Ekosistem Intiora
-            </h3>
-            <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-              Semua modul fitur saling terhubung otomatis dalam satu database terpusat, mempermudah tim sales, CS, dan operasional Anda.
-            </p>
-          </div>
+        <div className="pt-4 border-t border-slate-200/80">
+          <div className="relative rounded-3xl bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 p-8 sm:p-12 text-white shadow-2xl border border-blue-900/50 overflow-hidden">
+            {/* Ambient glows */}
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-80 h-80 rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-80 h-80 rounded-full bg-indigo-500/20 blur-3xl pointer-events-none" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {productsData.ecosystemFeatures.map((feature) => (
-              <div
-                key={feature.id}
-                className="p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-blue-300 hover:shadow-md transition-all space-y-2.5 group"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-blue-50 group-hover:border-blue-200 transition-colors">
-                    {getFeatureIcon(feature.id)}
-                  </div>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 group-hover:bg-blue-50 group-hover:text-blue-700 transition-colors">
-                    {feature.category}
-                  </span>
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="space-y-3 text-center lg:text-left max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold">
+                  <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+                  <span>12+ MODUL LENGKAP TERINTEGRASI</span>
                 </div>
-                <h4 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  {feature.title}
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {feature.description}
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                  Ingin melihat rincian seluruh modul &amp; fitur Intiora?
+                </h3>
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  Dari auto routing chat, kualifikasi prospek otomatis, tiket komplain, hingga kalkulator ongkir kurir dan kasir QRIS — semua kami jelaskan secara rinci, jelas, singkat, dan padat.
                 </p>
               </div>
-            ))}
+
+              <div className="shrink-0 w-full sm:w-auto">
+                <Link
+                  href="/fitur"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 transition-all group"
+                >
+                  <span>Lihat Seluruh Fitur Selengkapnya</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 

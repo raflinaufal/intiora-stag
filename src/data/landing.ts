@@ -84,7 +84,7 @@ export const productsData = {
       name: "Chatbot AI & WhatsApp Omnichannel",
       headline: "Balas pesan WhatsApp, Instagram & Web 24/7 dalam satu inbox resmi.",
       description:
-        "Terhubung langsung ke WhatsApp Business API resmi Meta, Instagram DM, dan Website Live Chat. Dilengkapi asisten AI yang membalas chat instan dalam 2 detik secara konsisten 24 jam nonstop.",
+        "Terhubung langsung ke WhatsApp Business API resmi Meta dan Instagram DM. Pesan pelanggan langsung dibalas instan dalam 2 detik tanpa harus menunggu admin online.",
       badges: [
         "WhatsApp Business API Resmi",
         "Respon Cepat < 2 Detik",
@@ -93,86 +93,67 @@ export const productsData = {
       subFeatures: [
         "Chatbot AI membalas dalam 2 detik dengan bahasa ramah santun",
         "Pesan masuk terdistribusi otomatis ke tim tanpa berebutan",
-        "Jalur resmi Meta aman dari risiko pemblokiran nomor WhatsApp",
+        "Jalur resmi Meta aman 100% dari risiko pemblokiran nomor",
       ],
-      ctaLabel: "Lihat Demo Chatbot AI",
-      ctaHref: "#demo",
+      ctaLabel: "Pelajari lebih lanjut",
+      ctaHref: "/fitur#chat-omnichannel",
     },
     {
       id: "ai-agent",
       name: "AI Agent Cerdas & Mandiri",
-      headline: "AI yang paham katalog bisnismu, siap kualifikasi prospek otomatis.",
+      headline: "AI mempelajari katalog bisnismu dan menyaring pembeli serius.",
       description:
-        "Cukup unggah dokumen PDF, daftar harga, atau FAQ tokomu. AI Agent akan mempelajari bisnis Anda dalam hitungan menit, menjawab pertanyaan akurat, dan otomatis mengoper ke tim sales saat ada prospek potensial.",
+        "Cukup unggah dokumen PDF atau daftar harga. AI memahami produkmu dalam hitungan menit, menjawab pertanyaan akurat, dan mengoper chat ke tim sales saat pembeli siap transfer.",
       badges: [
         "Latih AI Pakai Dokumen/PDF",
-        "Kualifikasi Lead Otomatis",
-        "Human Handoff Cerdas",
+        "Filter Pembeli Serius",
+        "Oper Otomatis ke Sales",
       ],
       subFeatures: [
         "Paham bahasa gaul, singkatan, dan gaya chat pembeli Indonesia",
         "Kualifikasi kebutuhan & budget calon pembeli secara natural",
         "Alihkan chat ke admin manusia dengan rangkuman inti masalah",
       ],
-      ctaLabel: "Lihat Cara Kerja AI Agent",
-      ctaHref: "#demo",
+      ctaLabel: "Pelajari lebih lanjut",
+      ctaHref: "/fitur#ai-agent",
     },
     {
       id: "crm-pipeline",
       name: "Aplikasi CRM & Pipeline Penjualan",
       headline: "Kelola data pelanggan dan pantau proses closing dari chat sampai lunas.",
       description:
-        "Semua kontak WhatsApp, riwayat percakapan, dan status prospek tersimpan rapi dalam pipeline visual. Tidak ada lagi calon pembeli yang lupa di-follow-up oleh tim sales Anda.",
+        "Semua kontak WhatsApp, riwayat transaksi, dan status prospek tersimpan rapi dalam pipeline visual. Tidak ada lagi calon pembeli yang lupa di-follow-up oleh tim sales.",
       badges: [
-        "Database Pelanggan 360",
+        "Database Pelanggan Rapi",
         "Visual Sales Pipeline",
         "Manajemen Tiket Komplain",
       ],
       subFeatures: [
         "Catat riwayat chat & preferensi belanja tiap pelanggan otomatis",
-        "Pantau tahapan prospek: Kontak Baru ➔ Kualifikasi ➔ Closing",
+        "Pantau tahapan prospek dari kontak baru hingga closing transfer",
         "Kelola tiket komplain pelanggan dengan respon cepat dan terukur",
       ],
-      ctaLabel: "Lihat Tampilan CRM",
-      ctaHref: "#demo",
+      ctaLabel: "Pelajari lebih lanjut",
+      ctaHref: "/fitur#crm-pipeline",
     },
     {
       id: "wa-blast",
       name: "WA Blast & Broadcast Resmi",
       headline: "Kirim pesan promo ke ribuan kontak sekaligus tanpa takut diblokir.",
       description:
-        "Gunakan jalur WhatsApp Business API resmi untuk mengirim penawaran diskon, katalog terbaru, atau pengumuman event. Kelompokkan penerima berdasarkan riwayat beli agar promo tepat sasaran dan menghasilkan omset tinggi.",
+        "Gunakan jalur WhatsApp Business API resmi Meta untuk mengirim penawaran diskon atau katalog terbaru. Kelompokkan kontak berdasarkan riwayat beli agar promo tepat sasaran dan omset maksimal.",
       badges: [
-        "WA Blast Resmi Meta (Aman)",
-        "Segmentasi Pelanggan",
-        "Laporan Penjualan & ROAS",
+        "Aman 100% Anti-Blokir",
+        "Target Pembeli Tepat",
+        "Pantau Omset Penjualan",
       ],
       subFeatures: [
         "Broadcast massal resmi 100% aman tanpa risiko banned nomor",
         "Kirim pesan khusus ke pelanggan setia atau pembeli yang lama tak order",
         "Pantau jumlah pesan terkirim, dibaca, dan nominal omset yang masuk",
       ],
-      ctaLabel: "Lihat Fitur WA Blast",
-      ctaHref: "#demo",
-    },
-    {
-      id: "order-automation",
-      name: "Otomatisasi Order & Kasir Chat",
-      headline: "Pemesanan, cek ongkir kurir, dan bayar QRIS langsung di obrolan.",
-      description:
-        "Pelanggan tidak perlu pindah ke aplikasi lain. Buat pesanan langsung di WhatsApp, hitung ongkos kirim kurir otomatis, dan terima pembayaran lewat QRIS yang langsung terverifikasi seketika.",
-      badges: [
-        "Buat Pesanan di Chat",
-        "Cek Ongkir Kurir Otomatis",
-        "Pembayaran QRIS Instan",
-      ],
-      subFeatures: [
-        "Kirim invoice dan rincian belanja berlogo tokomu langsung di chat",
-        "Cek tarif ongkos kirim JNE, SiCepat, J&T secara real-time di obrolan",
-        "Pembayaran QRIS otomatis dicek sistem, nota PDF langsung terbit",
-      ],
-      ctaLabel: "Lihat Alur Order Chat",
-      ctaHref: "#demo",
+      ctaLabel: "Pelajari lebih lanjut",
+      ctaHref: "/fitur#wa-blast",
     },
   ],
   ecosystemFeatures: [
@@ -835,7 +816,7 @@ export const fiturMegaMenu = {
     href: "#produk",
     trustText: "Dipercaya 3.000+ bisnis di Indonesia",
   },
-  bottomLink: { label: "Lihat semua fitur →", href: "#produk" },
+  bottomLink: { label: "Lihat semua fitur →", href: "/fitur" },
 };
 
 export const solusiMegaMenu = {
@@ -898,4 +879,296 @@ export const solusiMegaMenu = {
     { label: "Lihat semua industri →", href: "#solusi" },
   ],
 };
+
+export const allFeaturesDetailed = {
+  header: {
+    badge: "SEMUA FITUR INTIORA",
+    heading: "Lengkap, Terintegrasi, dan Siap Membantu Bisnis Anda",
+    description:
+      "Pelajari seluruh kemampuan platform Intiora secara rinci. Dirancang khusus untuk mempermudah kerja tim sales, customer service, dan pemilik toko di Indonesia.",
+  },
+  categories: [
+    { id: "all", label: "Semua Fitur" },
+    { id: "chat", label: "Chat & WhatsApp Resmi" },
+    { id: "ai", label: "Kecerdasan Buatan (AI)" },
+    { id: "crm", label: "CRM & Data Pelanggan" },
+    { id: "marketing", label: "Marketing & Broadcast" },
+    { id: "order", label: "Kasir & Transaksi Chat" },
+  ],
+  items: [
+    {
+      id: "chatbot-wa",
+      category: "chat",
+      categoryLabel: "Chat & WhatsApp Resmi",
+      name: "Chatbot AI WhatsApp",
+      tagline: "Balas chat pembeli 24 jam nonstop dalam 2 detik",
+      summary:
+        "Asisten pintar yang otomatis membalas pesan WhatsApp pembeli kapan saja. Mengerti bahasa percakapan sehari-hari, singkatan, dan pertanyaan umum seputar harga serta spesifikasi produk.",
+      problem: "Admin lambat membalas chat di luar jam kerja, membuat calon pembeli kabur ke toko sebelah.",
+      solution: "Chatbot langsung menjawab pertanyaan produk detik itu juga, menjaga minat beli tetap hangat.",
+      bullets: [
+        "Kecepatan balas rata-rata di bawah 2 detik",
+        "Paham bahasa informal dan typo pembeli Indonesia",
+        "Bisa dilatih dengan katalog, FAQ, dan SOP toko Anda",
+      ],
+      icon: "Bot",
+    },
+    {
+      id: "wa-api",
+      category: "chat",
+      categoryLabel: "Chat & WhatsApp Resmi",
+      name: "WhatsApp Business API Resmi",
+      tagline: "Koneksi resmi Meta dengan centang hijau dan aman anti-blokir",
+      summary:
+        "Gunakan jalur resmi WhatsApp Cloud API dari Meta. Nomor bisnis Anda aman dari pemblokiran, memiliki kecepatan pengiriman broadcast tertinggi, dan memenuhi syarat centang hijau resmi.",
+      problem: "Memakai aplikasi WhatsApp tidak resmi berisiko tinggi nomor toko diblokir sepihak oleh Meta.",
+      solution: "Integrasi API resmi menjamin nomor bisnis aman, terverifikasi, dan bisa diakses banyak admin sekaligus.",
+      bullets: [
+        "100% aman dan didukung langsung oleh Meta",
+        "Satu nomor WhatsApp bisa dipakai puluhan admin bersamaan",
+        "Dukungan pengajuan centang hijau (verified green badge)",
+      ],
+      icon: "CheckCircle2",
+    },
+    {
+      id: "omnichannel",
+      category: "chat",
+      categoryLabel: "Chat & WhatsApp Resmi",
+      name: "Aplikasi Omnichannel",
+      tagline: "Satukan WhatsApp, Instagram DM, dan Webchat di satu layar",
+      summary:
+        "Semua obrolan dari berbagai channel masuk ke satu kotak masuk terpadu. Admin tidak perlu lagi repot gonta-ganti smartphone atau membuka banyak tab aplikasi browser.",
+      problem: "Admin kewalahan mengecek banyak HP toko, menyebabkan banyak pesan di Instagram dan WhatsApp terlewat.",
+      solution: "Semua pesan dari semua akun berkumpul di satu dashboard yang rapi dan terorganisir.",
+      bullets: [
+        "Mendukung WhatsApp, Instagram DM, dan Live Webchat",
+        "Riwayat chat pelanggan lintas channel tersimpan jadi satu",
+        "Pemberitahuan pesan masuk instan ke seluruh staf yang bertugas",
+      ],
+      icon: "Layers",
+    },
+    {
+      id: "auto-routing",
+      category: "chat",
+      categoryLabel: "Chat & WhatsApp Resmi",
+      name: "Auto Routing & Pembagian Chat",
+      tagline: "Bagi pesan masuk secara otomatis dan adil ke staf admin",
+      summary:
+        "Atur aturan pembagian pesan otomatis, baik secara bergiliran (round-robin) maupun berdasarkan keahlian staf (misal: pertanyaan teknis langsung ke CS, tanya grosir ke Sales).",
+      problem: "Admin berebutan memilih chat yang gampang dan menelantarkan pertanyaan yang butuh penanganan khusus.",
+      solution: "Sistem membagi beban chat secara otomatis dan merata ke staf yang sedang aktif bertugas.",
+      bullets: [
+        "Bagi chat otomatis berdasarkan shift dan kapasitas staf",
+        "Routing khusus berdasarkan kategori pertanyaan pembeli",
+        "Tinggalkan catatan internal di obrolan yang hanya bisa dibaca tim",
+      ],
+      icon: "GitBranch",
+    },
+    {
+      id: "ai-agent-custom",
+      category: "ai",
+      categoryLabel: "Kecerdasan Buatan (AI)",
+      name: "Buat AI Agent Kustom",
+      tagline: "Latih asisten AI bisnismu dalam 5 menit hanya dengan unggah PDF",
+      summary:
+        "Cukup upload dokumen katalog produk, price list, atau file FAQ toko Anda. AI Agent akan membaca seluruh informasi tersebut dan siap menjawab pembeli secara cerdas dan akurat.",
+      problem: "Melatih admin baru butuh waktu berminggu-minggu dan sering salah memberikan informasi ke pembeli.",
+      solution: "AI Agent langsung menguasai seluruh informasi tokomu seketika dan menjawab konsisten.",
+      bullets: [
+        "Tinggal unggah file PDF, Word, Excel, atau link website toko",
+        "Pembaruan harga atau stok dapat dilakukan kapan saja dengan mudah",
+        "AI hanya menjawab sesuai data bisnismu tanpa mengarang info",
+      ],
+      icon: "Sparkles",
+    },
+    {
+      id: "lead-qualification",
+      category: "ai",
+      categoryLabel: "Kecerdasan Buatan (AI)",
+      name: "Kualifikasi Leads Otomatis",
+      tagline: "AI menyaring pembeli yang benar-benar siap transaksi",
+      summary:
+        "AI menanyakan kebutuhan, jumlah pesanan, dan estimasi waktu pembelian secara ramah dan terstruktur. Tim sales Anda hanya perlu menindaklanjuti calon pembeli yang benar-benar berpotensi closing.",
+      problem: "Tim sales kehabisan waktu melayani penanya iseng yang tidak berniat membeli.",
+      solution: "AI menyaring prospek terlebih dahulu, melabeli 'Hot Lead', lalu mengalihkan ke sales.",
+      bullets: [
+        "Kumpulkan data preferensi, jumlah pesanan, dan alamat pembeli",
+        "Label otomatis: Hot Lead, Warm Lead, atau Sekadar Tanya",
+        "Meningkatkan closing rate tim sales hingga 40%",
+      ],
+      icon: "Cpu",
+    },
+    {
+      id: "smart-handoff",
+      category: "ai",
+      categoryLabel: "Kecerdasan Buatan (AI)",
+      name: "Smart Human Handoff",
+      tagline: "Alihkan obrolan ke admin manusia dengan rangkuman instan",
+      summary:
+        "Saat pelanggan meminta bicara dengan staf atau kasus membutuhkan negosiasi khusus, AI otomatis mengalihkan chat ke staf manusia disertai ringkasan inti kebutuhan pembeli.",
+      problem: "Pelanggan frustrasi jika chatbot kaku memaksakan jawaban saat menghadapi komplain rumit.",
+      solution: "Transisi mulus dari AI ke manusia tanpa pelanggan harus mengulang ceritanya dari awal.",
+      bullets: [
+        "AI menyertakan ringkasan masalah di catatan internal untuk staf",
+        "Notifikasi otomatis ke admin saat eskalasi dibutuhkan",
+        "Pelanggan merasa dihargai dengan penanganan manusiawi",
+      ],
+      icon: "Zap",
+    },
+    {
+      id: "crm-contacts",
+      category: "crm",
+      categoryLabel: "CRM & Data Pelanggan",
+      name: "Aplikasi CRM & Buku Kontak",
+      tagline: "Database pelanggan rapi lengkap dengan riwayat belanja",
+      summary:
+        "Setiap orang yang chat otomatis tersimpan nomor dan namanya. Anda bisa menambahkan label kustom (misal: Reseller, Pelanggan VIP, Grosir) serta melihat total nominal belanja tiap pembeli.",
+      problem: "Nomor kontak pelanggan tersebar di berbagai HP dan hilang saat HP toko rusak atau ganti admin.",
+      solution: "Seluruh data pelanggan tersimpan aman di server terpusat milik bisnis Anda sendiri.",
+      bullets: [
+        "Simpan otomatis kontak dari WhatsApp, Instagram, dan Web",
+        "Label kustom: VIP, Reseller, Distributor, Pelanggan Baru",
+        "Lihat riwayat belanja dan total omset dari tiap pelanggan (CLV)",
+      ],
+      icon: "Users",
+    },
+    {
+      id: "sales-pipeline",
+      category: "crm",
+      categoryLabel: "CRM & Data Pelanggan",
+      name: "Manajemen Pipeline Sales",
+      tagline: "Pantau proses transaksi dari chat pertama sampai lunas",
+      summary:
+        "Visualisasikan proses penjualan dalam papan pipeline (Kanban). Ketahui dengan pasti berapa calon pembeli yang baru masuk, sedang negosiasi, menunggu transfer, atau sudah lunas.",
+      problem: "Banyak calon pembeli terlupakan dan tidak pernah di-follow up hingga akhirnya batal membeli.",
+      solution: "Papan visual memperlihatkan posisi tiap pembeli agar tim sales segera menindaklanjuti.",
+      bullets: [
+        "Papan visual tarik-lepas (drag and drop) yang sangat mudah",
+        "Pengingat batas waktu follow-up agar tidak keduluan kompetitor",
+        "Laporan konversi sales dari tiap tahapan corong penjualan",
+      ],
+      icon: "Kanban",
+    },
+    {
+      id: "complaint-tickets",
+      category: "crm",
+      categoryLabel: "CRM & Data Pelanggan",
+      name: "Manajemen Tiket Komplain",
+      tagline: "Tangani keluhan pelanggan secara cepat dan transparan",
+      summary:
+        "Ubah chat komplain menjadi tiket berpenanggung jawab jelas. Lengkap dengan status pengerjaan, batas waktu penanganan (SLA), dan riwayat penyelesaian masalah.",
+      problem: "Komplain pembeli di chat tenggelam dan tidak ditangani, memicu ulasan negatif di media sosial.",
+      solution: "Setiap komplain tercatat menjadi tiket resmi dengan tim yang bertanggung jawab menyelesaikannya.",
+      bullets: [
+        "Penetapan tingkat urgensi: Rendah, Sedang, Mendesak",
+        "Penetapan penanggung jawab spesifik untuk tiap kasus",
+        "Pantau waktu respon dan tingkat kepuasan pelanggan",
+      ],
+      icon: "LifeBuoy",
+    },
+    {
+      id: "wa-broadcast",
+      category: "marketing",
+      categoryLabel: "Marketing & Broadcast",
+      name: "WA Blast & Broadcast Resmi",
+      tagline: "Kirim promo ke ribuan pelanggan sekaligus tanpa risiko blokir",
+      summary:
+        "Luncurkan broadcast promo diskon, peluncuran produk baru, atau pengingat jadwal ke ribuan kontak pelanggan secara resmi lewat Meta Cloud API dengan performa pengiriman tertinggi.",
+      problem: "Software blast ilegal sering membuat nomor WhatsApp bisnis diblokir permanen oleh pihak WhatsApp.",
+      solution: "Broadcast resmi resmi Meta menjamin pesan sampai ke inbox pembeli dengan aman dan terpercaya.",
+      bullets: [
+        "Kirim ribuan pesan massal dalam hitungan menit",
+        "Bisa menyertakan tombol interaktif 'Beli Sekarang' di dalam pesan",
+        "Tingkat keterbacaan mencapai 95% jauh mengungguli email",
+      ],
+      icon: "Radio",
+    },
+    {
+      id: "segmentation",
+      category: "marketing",
+      categoryLabel: "Marketing & Broadcast",
+      name: "Segmentasi Pelanggan Pintar",
+      tagline: "Kirim penawaran tepat ke orang yang tepat",
+      summary:
+        "Kelompokkan kontak berdasarkan kota, jenis produk yang pernah dibeli, atau waktu terakhir transaksi. Kirim promo yang relevan agar tingkat pembelian jauh lebih tinggi.",
+      problem: "Mengirim promo yang sama ke semua orang terasa mengganggu dan membuat pelanggan risih.",
+      solution: "Kirim promo yang dipersonalisasi sesuai minat belanja masing-masing kelompok pelanggan.",
+      bullets: [
+        "Filter kontak berdasarkan tag, riwayat produk, atau total belanja",
+        "Target khusus pelanggan yang sudah 30 hari tidak belanja",
+        "Meningkatkan tingkat konversi penjualan hingga 3x lipat",
+      ],
+      icon: "Users",
+    },
+    {
+      id: "roas-analytics",
+      category: "marketing",
+      categoryLabel: "Marketing & Broadcast",
+      name: "Laporan Penjualan & ROAS",
+      tagline: "Ketahui pasti berapa omset yang dihasilkan dari tiap promo",
+      summary:
+        "Dashboard analitik yang menghitung berapa banyak pesan broadcast yang berhasil terkirim, dibaca oleh pelanggan, dan menghasilkan transaksi penjualan nyata.",
+      problem: "Pemilik bisnis tidak tahu apakah biaya promosi yang dikeluarkan benar-benar menghasilkan keuntungan.",
+      solution: "Laporan transparan menghitung langsung omset yang masuk dari setiap kampanye broadcast.",
+      bullets: [
+        "Metrik lengkap: Terkirim, Terbaca, Chat Masuk, Closing Penjualan",
+        "Kalkulasi rasio pengembalian modal promo (ROAS)",
+        "Grafik jam paling responsif pelanggan membuka pesan",
+      ],
+      icon: "BarChart3",
+    },
+    {
+      id: "chat-cashier",
+      category: "order",
+      categoryLabel: "Kasir & Transaksi Chat",
+      name: "Kasir & Pemesanan di Chat",
+      tagline: "Pelanggan bisa langsung pesan produk di dalam obrolan",
+      summary:
+        "Kirim daftar produk bergambar dan rincian harga langsung di chat. Pembeli dapat memilih varian, memasukkan alamat, dan menerima rincian total belanja tanpa keluar dari WhatsApp.",
+      problem: "Mengarahkan pembeli keluar dari WhatsApp ke web lain sering membuat mereka batal membeli.",
+      solution: "Seluruh proses pemesanan diselesaikan langsung di dalam percakapan chat yang sudah berjalan.",
+      bullets: [
+        "Katalog produk bergambar siap kirim sekali klik",
+        "Hitung subtotal, diskon kupon, dan rincian otomatis",
+        "Terbitkan nota pesanan berlogo toko langsung ke obrolan",
+      ],
+      icon: "ShoppingCart",
+    },
+    {
+      id: "shipping-calculator",
+      category: "order",
+      categoryLabel: "Kasir & Transaksi Chat",
+      name: "Cek Ongkir Kurir Otomatis",
+      tagline: "Hitung tarif kurir ekspedisi seketika di dalam chat",
+      summary:
+        "Koneksi langsung ke berbagai ekspedisi pengiriman terkemuka di Indonesia (JNE, SiCepat, J&T, Anteraja, dll.). Sistem otomatis menghitung ongkos kirim berdasarkan alamat pembeli.",
+      problem: "Admin harus membuka aplikasi kurir lain untuk mengecek ongkir secara manual satu per satu.",
+      solution: "Tarif ongkos kirim muncul seketika di chat begitu pembeli mengetik kecamatan atau kota tujuan.",
+      bullets: [
+        "Mendukung berbagai pilihan kurir reguler, kargo, dan instan",
+        "Ongkir langsung ditambahkan ke total tagihan pesanan",
+        "Pemberitahuan nomor resi otomatis saat paket sudah dikirim",
+      ],
+      icon: "Truck",
+    },
+    {
+      id: "qris-payments",
+      category: "order",
+      categoryLabel: "Kasir & Transaksi Chat",
+      name: "Pembayaran QRIS Instan",
+      tagline: "Bayar pakai QR langsung terverifikasi otomatis oleh sistem",
+      summary:
+        "Kirim kode QRIS dinamis langsung ke obrolan. Begitu pembeli memindai dan membayar lewat e-wallet atau m-banking, sistem otomatis memverifikasi pembayaran dan menerbitkan kwitansi lunas.",
+      problem: "Admin harus bolak-balik cek mutasi rekening bank dan mencocokkan struk bukti transfer manual.",
+      solution: "Verifikasi lunas otomatis dalam hitungan detik tanpa perlu bukti transfer fisik.",
+      bullets: [
+        "Mendukung semua bank dan e-wallet (GoPay, OVO, ShopeePay, Dana, dll.)",
+        "Pemberitahuan status 'Lunas' seketika ke pembeli dan admin",
+        "Stok produk otomatis terpotong saat pembayaran terverifikasi",
+      ],
+      icon: "QrCode",
+    },
+  ],
+};
+
 
