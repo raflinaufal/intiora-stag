@@ -355,23 +355,22 @@ export const industriesData = {
 };
 
 export const integrationsData = {
+  eyebrow: "INTEGRASI",
   heading: "Hubungkan Semua Tools Bisnismu dalam Satu Platform",
   description:
-    "Integrasikan Intiora dengan tools yang sudah Anda gunakan. WhatsApp Business API, Instagram, CRM, e-commerce, dan platform bisnis lainnya.",
-  cta: { label: "Lihat Semua Integrasi", href: "#integrasi" },
+    "WhatsApp Business API resmi Meta, Instagram, TikTok, Telegram, dan email masuk ke satu inbox cerdas. Konversi chat otomatis tersinkronisasi ke platform iklan (Meta CAPI), serta sistem internal bisnis Anda tersambung mulus lewat Open API & Webhook.",
+  cta: { label: "Lihat integrasi", href: "/fitur" },
   integrations: [
-    { name: "WhatsApp", icon: "MessageCircle" as const },
-    { name: "Instagram", icon: "Instagram" as const },
-    { name: "Gmail", icon: "Mail" as const },
-    { name: "Google Sheets", icon: "Sheet" as const },
-    { name: "Shopify", icon: "ShoppingBag" as const },
-    { name: "WooCommerce", icon: "ShoppingCart" as const },
-    { name: "Slack", icon: "Hash" as const },
-    { name: "Telegram", icon: "Send" as const },
-    { name: "Zapier", icon: "Zap" as const },
-    { name: "HubSpot", icon: "BarChart3" as const },
-    { name: "Stripe", icon: "CreditCard" as const },
-    { name: "Webhook", icon: "Globe" as const },
+    { name: "WhatsApp Business API", key: "whatsapp" },
+    { name: "Instagram", key: "instagram" },
+    { name: "TikTok", key: "tiktok" },
+    { name: "Facebook Messenger", key: "messenger" },
+    { name: "Telegram", key: "telegram" },
+    { name: "Live chat website", key: "livechat" },
+    { name: "Email", key: "email" },
+    { name: "Meta", key: "meta" },
+    { name: "Open API", key: "openapi" },
+    { name: "Webhook", key: "webhook" },
   ],
 };
 
