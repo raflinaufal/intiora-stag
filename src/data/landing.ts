@@ -629,12 +629,19 @@ export const faqData = {
 };
 
 export const finalCtaData = {
-  heading: "Ubah Setiap Percakapan Jadi Penjualan",
+  heading: "Ubah Setiap Percakapan Menjadi Closing Penjualan Nyata",
   description:
-    "Mulai gunakan Intiora hari ini dan rasakan bagaimana AI Agent dapat mengubah cara bisnis Anda melayani pelanggan dan meningkatkan penjualan.",
-  primaryCta: { label: "Coba Gratis", href: "#demo" },
-  secondaryCta: { label: "Jadwalkan Demo", href: "#demo" },
-  trustNote: "Tanpa kartu kredit • Setup dalam hitungan menit",
+    "Buktikan bagaimana AI Agent Intiora membalas pesan dalam hitungan detik, menindaklanjuti prospek secara otomatis, dan melipatgandakan omzet bisnis Anda tanpa perlu menambah tim.",
+  checklist: [
+    "Setup 10 menit",
+    "14 hari free trial",
+    "1-on-1 konsultasi",
+  ],
+  primaryCta: { label: "Mulai Coba Gratis", href: "#demo" },
+  secondaryCta: {
+    label: "WhatsApp Kami",
+    href: "https://wa.me/6281234567890?text=Halo%20Intiora,%20saya%20ingin%20konsultasi%20dan%20coba%20gratis",
+  },
 };
 
 export const footerData = {
