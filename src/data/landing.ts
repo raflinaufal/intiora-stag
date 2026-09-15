@@ -409,44 +409,37 @@ export const analyticsData = {
 export const agentBuilderData = {
   heading: "Buat AI Agent dalam 5 Menit",
   description:
-    "Tidak perlu keahlian teknis. Cukup upload knowledge base, atur persona, hubungkan channel, dan AI Agent Anda siap melayani pelanggan.",
-  steps: [
+    "Kelola semua chat dengan AI yang mudah dibuat. Latih pakai data bisnismu dan hubungkan ke sistem lain tanpa ribet.",
+  pillars: [
     {
-      number: 1,
-      title: "Upload Knowledge",
+      title: "Builder AI Lebih Sederhana",
       description:
-        "Upload dokumen, FAQ, katalog produk, atau URL website sebagai sumber pengetahuan AI Agent.",
+        "Buat AI Agent yang powerful tanpa coding, cukup 5 menit, semudah briefing admin CS.",
     },
     {
-      number: 2,
-      title: "Atur Persona",
+      title: "Sumber Pengetahuan",
       description:
-        "Tentukan nama, gaya bicara, dan aturan respon AI Agent sesuai brand Anda.",
+        "Cukup salin SOP dan info bisnismu, AI langsung bisa jawab dengan tepat.",
     },
     {
-      number: 3,
-      title: "Hubungkan Channel",
+      title: "API Integration",
       description:
-        "Sambungkan AI Agent ke WhatsApp, Instagram, Website Chat, atau channel lainnya.",
-    },
-    {
-      number: 4,
-      title: "Aktifkan Agent",
-      description:
-        "AI Agent Anda siap menjawab pelanggan 24/7 secara otomatis dan cerdas.",
+        "Hubungkan AI dengan berbagai API untuk cek ongkir, booking jadwal, dan kebutuhan bisnis lainnya.",
     },
   ],
-  benefits: [
-    { title: "Tanpa coding", description: "Setup visual tanpa menulis satu baris kode" },
-    {
-      title: "Mudah dikustomisasi",
-      description: "Sesuaikan respon dan perilaku AI kapan saja",
-    },
-    {
-      title: "Siap digunakan",
-      description: "Langsung aktif dan melayani pelanggan dalam hitungan menit",
-    },
-  ],
+  mockup: {
+    agentName: "Michael",
+    agentRole: "Create Your AI Agent",
+    behaviour:
+      "You are the official Customer Service AI for Lumière Beauty Lounge. Provide clear, concise, and accurate information about services, pricing, promotions, and booking procedures. Use a friendly and professional tone.",
+    welcomeMessage:
+      "Hello and welcome to Lumière Beauty Lounge. I'm here to help you with our treatments, prices, and bookings. Let me know what service you need and I'll assist you.",
+    transferCondition:
+      "Transfer to a human staff member if:\n• The customer requests a refund, compensation, or pricing exception",
+    previewAiGreeting:
+      "Hello and welcome to Lumière Beauty Lounge. I'm here to help you with our treatments, prices, and bookings. Let me know what service you need and I'll assist you.",
+    previewUserReply: "Hello, I want to ask",
+  },
 };
 
 export const conversationData = {
