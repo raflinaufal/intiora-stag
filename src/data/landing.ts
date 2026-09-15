@@ -638,47 +638,100 @@ export const finalCtaData = {
 };
 
 export const footerData = {
-  description:
-    "Platform AI Agent dan Omnichannel CRM terdepan untuk customer service dan sales bisnis di Indonesia.",
-  columns: [
-    {
+  metaPartner: "Intiora adalah Meta Business Partner Resmi",
+  offices: {
+    indonesia: [
+      {
+        city: "Kantor Jakarta",
+        company: "PT. Intiora Teknologi Indonesia",
+        address:
+          "Prosperity Tower unit 16i, Jl. Jenderal Sudirman No.Kav. 52-53, District 8, SCBD, Jakarta Selatan 12190",
+      },
+      {
+        city: "Kantor Tangerang",
+        company: "PT. Intiora Teknologi Indonesia",
+        address:
+          "Ruko Hampton Avenue Blok A no.10, Paramount, Gading Serpong, Tangerang, 15810",
+      },
+    ],
+    singapore: [
+      {
+        city: "Singapore Office",
+        company: "Intiora Pte. Ltd.",
+        address:
+          "10 Marina Boulevard, Marina Bay Financial Centre Tower 2, Singapore 018983",
+      },
+    ],
+    malaysia: [
+      {
+        city: "Kuala Lumpur Office",
+        company: "Intiora Sdn. Bhd.",
+        address:
+          "Level 23, Menara Exchange 106, Lingkaran TRX, Kuala Lumpur, 55188",
+      },
+    ],
+  },
+  socialLinks: [
+    { name: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
+    { name: "Instagram", href: "https://instagram.com", icon: "instagram" },
+    { name: "YouTube", href: "https://youtube.com", icon: "youtube" },
+    { name: "Facebook", href: "https://facebook.com", icon: "facebook" },
+  ],
+  sections: {
+    produk: {
       title: "Produk",
       links: [
-        { label: "AI Agent", href: "#produk" },
-        { label: "Omnichannel", href: "#produk" },
+        { label: "Chat", href: "#produk" },
         { label: "CRM", href: "#produk" },
-        { label: "Analytics", href: "#produk" },
+        { label: "Marketing", href: "#produk" },
+        { label: "Order", href: "#produk" },
+        { label: "Harga", href: "#harga" },
       ],
     },
-    {
+    legal: {
+      title: "Legal",
+      links: [
+        { label: "Syarat & Ketentuan", href: "#" },
+        { label: "Kebijakan Privasi", href: "#" },
+        { label: "Kebijakan Retur, Pengembalian Dana & Pengiriman", href: "#" },
+      ],
+    },
+    fitur: {
+      title: "Fitur",
+      links: [
+        { label: "Chatbot AI", href: "/fitur" },
+        { label: "Buat AI Agent", href: "/fitur" },
+        { label: "Aplikasi CRM", href: "/fitur" },
+        { label: "WA Blast", href: "/fitur" },
+        { label: "Otomatisasi Order", href: "/fitur" },
+        { label: "Chatbot AI WhatsApp", href: "/fitur" },
+      ],
+      viewAll: { label: "Lihat semua fitur", href: "/fitur" },
+    },
+    industri: {
+      title: "Industri",
+      links: [
+        { label: "Kesehatan", href: "#solusi" },
+        { label: "Ritel & E-Commerce", href: "#solusi" },
+        { label: "F&B", href: "#solusi" },
+        { label: "Pendidikan", href: "#solusi" },
+        { label: "Keuangan", href: "#solusi" },
+        { label: "Pemerintahan", href: "#solusi" },
+      ],
+      viewAll: { label: "Lihat semua industri", href: "#solusi" },
+    },
+    solusi: {
       title: "Solusi",
       links: [
-        { label: "Customer Service", href: "#solusi" },
         { label: "Sales", href: "#solusi" },
+        { label: "Customer Service", href: "#solusi" },
         { label: "Marketing", href: "#solusi" },
-        { label: "Enterprise", href: "#solusi" },
+        { label: "HRD", href: "#solusi" },
+        { label: "Operasional", href: "#solusi" },
       ],
+      viewAll: { label: "Lihat semua solusi", href: "#solusi" },
     },
-    {
-      title: "Perusahaan",
-      links: [
-        { label: "Tentang Kami", href: "#" },
-        { label: "Karier", href: "#" },
-        { label: "Partner", href: "#" },
-        { label: "Kontak", href: "#" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { label: "Blog", href: "#resources" },
-        { label: "Dokumentasi", href: "#resources" },
-        { label: "Help Center", href: "#resources" },
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
-      ],
-    },
-  ],
+  },
 };
 
 export const fiturMegaMenu = {
