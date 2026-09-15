@@ -445,50 +445,24 @@ export const agentBuilderData = {
 export const conversationData = {
   heading: "AI Agent & Alur Chat",
   description:
-    "AI yang cerdas dengan kemampuan memahami konteks, menjawab pertanyaan kompleks, dan melakukan handoff ke tim Anda saat dibutuhkan.",
-  capabilities: [
+    "Atur alur chat dengan mudah, arahkan customer ke AI atau human agent yang tepat.",
+  tabs: [
     {
-      title: "Memahami Bahasa Natural",
+      id: "spesialis",
+      title: "AI Agent Spesialis",
       description:
-        "AI Agent memahami bahasa Indonesia sehari-hari, termasuk bahasa gaul, singkatan, dan konteks percakapan.",
+        "Buat AI khusus untuk sales, support, billing, dan lainnya, masing-masing dengan data sendiri.",
     },
     {
-      title: "Menjawab Berdasarkan Knowledge Base",
+      id: "visual-flow",
+      title: "Designer Alur Visual",
+      description: "Atur alur chat dengan drag & drop, tanpa coding.",
+    },
+    {
+      id: "jam-kerja",
+      title: "Jam Kerja AI",
       description:
-        "Respon akurat berdasarkan data produk, FAQ, dan dokumen yang Anda upload ke sistem.",
-    },
-    {
-      title: "Memberikan Rekomendasi Produk",
-      description:
-        "AI menganalisis kebutuhan pelanggan dan merekomendasikan produk atau layanan yang paling relevan.",
-    },
-    {
-      title: "Melakukan Qualification Lead",
-      description:
-        "Otomatis mengumpulkan informasi penting calon pelanggan sebelum diteruskan ke tim sales.",
-    },
-    {
-      title: "Handoff ke Human Agent",
-      description:
-        "Saat percakapan membutuhkan sentuhan manusia, AI akan meneruskan ke agent yang tepat beserta konteks lengkap.",
-    },
-  ],
-  chatMessages: [
-    { sender: "customer", text: "Halo, saya mau tanya soal paket Business" },
-    {
-      sender: "ai",
-      text: "Halo! Terima kasih sudah menghubungi kami. Paket Business kami mencakup fitur Omnichannel Inbox, AI Agent, dan CRM terintegrasi. Apakah ada fitur spesifik yang ingin Anda ketahui lebih lanjut?",
-    },
-    { sender: "customer", text: "Berapa harganya dan bisa trial dulu ga?" },
-    {
-      sender: "ai",
-      text: "Tentu! Paket Business dimulai dari Rp899.000/bulan. Kami juga menyediakan free trial 14 hari tanpa kartu kredit. Mau saya bantu setup trial-nya sekarang?",
-    },
-    { sender: "customer", text: "Boleh, tolong bantu setup ya" },
-    {
-      sender: "ai",
-      text: "Baik! Saya akan hubungkan Anda dengan tim kami untuk proses setup. Mohon tunggu sebentar ya 😊",
-      isHandoff: true,
+        "Atur jam kerja AI agar chat dijawab tim saat online dan otomatis dialihkan ke AI di luar jam kerja.",
     },
   ],
 };
